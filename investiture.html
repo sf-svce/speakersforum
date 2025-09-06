@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investiture</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: url("img_9431.JPG") no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
+        color: white;
+      }
+
+      /* Overlay for readability */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+      }
+
+      /* Navbar - untouched */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 15px 40px;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .navbar .logo img {
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .navbar .links a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      .navbar .links a:hover {
+        color: #ffcc00;
+      }
+
+      /* Section Styling */
+      .section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 100px 10%;
+        gap: 50px;
+        color: white;
+      }
+
+      .section:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .section img {
+        width: 42%;
+        border-radius: 20px;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.75);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      .section img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.85);
+      }
+
+      .text {
+        flex: 1;
+        background: rgba(0, 0, 0, 0.65);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+        line-height: 1.8;
+        transition: transform 0.3s ease;
+      }
+
+      .text:hover {
+        transform: translateY(-4px);
+      }
+
+      .text h2 {
+        color: #f1c40f;
+        margin-bottom: 20px;
+        font-size: 2.2rem;
+        font-weight: bold;
+        text-shadow: 0 0 8px rgba(241, 196, 15, 0.6);
+      }
+
+      .text p {
+        font-size: 1.05rem;
+        color: #f5f5f5;
+      }
+
+      .highlighted {
+        color: #f1c40f;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .highlighted:hover {
+        color: #d4ac0d;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      /* Section Titles */
+      .section-title {
+        margin: 50px 0 20px;
+        font-size: 2.6rem;
+        font-weight: bold;
+        color: #f1c40f;
+        text-align: center;
+        text-shadow: 0 0 12px rgba(241, 196, 15, 0.7);
+      }
+
+      /* Video Section */
+      section h2 {
+        font-size: 2rem;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+      }
+
+      video {
+        border: 3px solid rgba(241, 196, 15, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      video:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 30px rgba(241, 196, 15, 0.6);
+      }
+
+      /* Footer - untouched */
+      footer {
+        background: #111;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer a {
+        color: #ffcc00;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .section {
+          flex-direction: column !important;
+          text-align: center;
+        }
+
+        .section img {
+          width: 85%;
+        }
+
+        .text {
+          padding: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar" data-aos="fade-down">
+      <div class="logo">
+        <img src="SF logo.png" alt="Logo" />
+        Speakers' Forum
+      </div>
+      <div class="links">
+        <a href="homepage.html">Home</a>
+        <a href="about us.html">About Us</a>
+        <a href="office bearers.html">Office Bearers</a>
+        <a href="events.html">Events</a>
+      </div>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section">
+      <img src="club.jpg" alt="Event" />
+      <div class="text">
+        <h2>The New Regime</h2>
+        <p>
+          The Office Bearers for the academic year 2025–2026 have taken charge
+          with energy, vision, and a strong commitment to elevate the Speakers’
+          Forum to new heights. Representing the diverse talents of SVCE, this
+          team brings together leadership, creativity, and a passion for
+          nurturing articulate, confident voices. Their primary focus is to
+          build upon the Forum’s existing legacy while introducing fresh
+          initiatives that broaden engagement across the student community. They
+          aim to provide every member a platform to express ideas freely,
+          participate in debates, and develop critical thinking skills. Beyond
+          organizing events, the 2025–2026 Office Bearers are committed to
+          fostering a culture of inclusivity, collaboration, and professional
+          excellence. They envision a year of impactful workshops, challenging
+          simulations, and signature events that inspire dialogue and encourage
+          participation at all levels. With clear objectives, strategic
+          planning, and unwavering dedication, this team is poised to strengthen
+          the Forum’s presence on campus, promote meaningful discourse, and
+          empower members to become confident communicators, leaders, and
+          socially aware citizens ready to take on responsibilities within and
+          beyond SVCE.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+      <img src="old club.jpg" alt="Event" />
+      <div class="text">
+        <h2>Legacy Of The Forum</h2>
+        <p>
+          The Office Bearers of 2024–2025 completed their tenure leaving behind
+          a legacy of dedication, creativity, and impactful initiatives.
+          Throughout the year, they expanded the reach of the Speakers’ Forum,
+          organizing a variety of events that encouraged students to develop
+          public speaking, critical thinking, and leadership skills. Their
+          approach combined structured planning with innovative ideas, ensuring
+          that every workshop, debate, and simulation was both engaging and
+          educational. Emphasis on mentorship and guidance allowed members to
+          step out of their comfort zones, express themselves confidently, and
+          actively participate in Forum activities. By blending established
+          practices with new strategies, the 2024–2025 Office Bearers
+          strengthened the organization’s framework, enhanced its reputation,
+          and set high standards for professionalism. Their focus on
+          collaboration, accountability, and inclusivity fostered a supportive
+          environment where all members felt valued and motivated. The team’s
+          achievements and strategic foresight have created a solid foundation
+          for the incoming 2025–2026 Office Bearers to build upon, inspiring
+          them to aim higher, innovate further, and carry forward the Forum’s
+          vision with renewed energy.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <img src="IMG_9431.jpg" alt="Event" />
+      <div class="text">
+        <h2>Forging New Paths</h2>
+        <p>
+          The newly inducted Office Bearers of 2025–2026 step into their roles
+          with a clear vision, dedication, and a drive to elevate the Speakers’
+          Forum to unprecedented heights. We extend our heartfelt gratitude to
+          the previous team for their guidance, commitment, and leadership,
+          which have created a strong foundation for our journey ahead. Inspired
+          by their accomplishments, we aim to push boundaries, introduce
+          innovative initiatives, and set ambitious goals for the Forum this
+          year. Our focus will be on expanding flagship events, hosting unique
+          workshops, enhancing member engagement, and creating opportunities
+          that challenge, inspire, and empower students. By fostering
+          collaboration, creativity, and leadership, we aspire to cultivate an
+          environment where members can express ideas confidently, think
+          critically, and participate meaningfully. With determination,
+          teamwork, and strategic planning, the 2025–2026 Office Bearers pledge
+          to uphold the Forum’s values while setting new benchmarks of
+          excellence, leaving a lasting impact on our community and inspiring
+          future generations of speakers and leaders.
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer data-aos="fade-up">
+      <p>
+        Contact us:
+        <a href="mailto:sf@svce.ac.in">sf@svce.ac.in</a>
+      </p>
+      <p>
+        Follow us on <a href="https://www.instagram.com/sf_svce">Instagram</a>
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youth Parliament</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: url("tero.JPG") no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
+        color: white;
+      }
+
+      /* Overlay for readability */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+      }
+
+      /* Navbar - untouched */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 15px 40px;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .navbar .logo img {
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .navbar .links a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      .navbar .links a:hover {
+        color: #ffcc00;
+      }
+
+      /* Section Styling */
+      .section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 100px 10%;
+        gap: 50px;
+        color: white;
+      }
+
+      .section:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .section img {
+        width: 42%;
+        border-radius: 20px;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.75);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      .section img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.85);
+      }
+
+      .text {
+        flex: 1;
+        background: rgba(0, 0, 0, 0.65);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+        line-height: 1.8;
+        transition: transform 0.3s ease;
+      }
+
+      .text:hover {
+        transform: translateY(-4px);
+      }
+
+      .text h2 {
+        color: #f1c40f;
+        margin-bottom: 20px;
+        font-size: 2.2rem;
+        font-weight: bold;
+        text-shadow: 0 0 8px rgba(241, 196, 15, 0.6);
+      }
+
+      .text p {
+        font-size: 1.05rem;
+        color: #f5f5f5;
+      }
+
+      .highlighted {
+        color: #f1c40f;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .highlighted:hover {
+        color: #d4ac0d;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      /* Section Titles */
+      .section-title {
+        margin: 50px 0 20px;
+        font-size: 2.6rem;
+        font-weight: bold;
+        color: #f1c40f;
+        text-align: center;
+        text-shadow: 0 0 12px rgba(241, 196, 15, 0.7);
+      }
+
+      /* Video Section */
+      section h2 {
+        font-size: 2rem;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+      }
+
+      video {
+        border: 3px solid rgba(241, 196, 15, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      video:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 30px rgba(241, 196, 15, 0.6);
+      }
+
+      /* Footer - untouched */
+      footer {
+        background: #111;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer a {
+        color: #ffcc00;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .section {
+          flex-direction: column !important;
+          text-align: center;
+        }
+
+        .section img {
+          width: 85%;
+        }
+
+        .text {
+          padding: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar" data-aos="fade-down">
+      <div class="logo">
+        <img src="SF logo.png" alt="Logo" />
+        Speakers' Forum
+      </div>
+      <div class="links">
+        <a href="homepage.html">Home</a>
+        <a href="about us.html">About Us</a>
+        <a href="office bearers.html">Office Bearers</a>
+        <a href="events.html">Events</a>
+      </div>
+    </div>
+
+    <!-- Your sections (unchanged HTML, only styling improved) -->
+    <div class="section">
+      <img src="Tnla/IMG_1341.JPG" alt="Event" />
+      <div class="text">
+        <h2>Introduction and Overview</h2>
+        <p>
+          The TNLA Youth Parliament 2025, organized by the Speakers’ Forum on
+          the 12th and 13th of August, marked a significant milestone as the
+          first flagship event of the Forum’s 2025–2026 tenure. Bringing
+          together students of SVCE from various departments, the event provided
+          a platform for intellectual engagement, democratic discourse, and
+          practical exposure to legislative processes. Delegates assumed the
+          roles of Members of the Legislative Assembly, simulating real-world
+          proceedings of the Tamil Nadu Legislative Assembly with remarkable
+          authenticity. In preparation for the event, the Speakers’ Forum
+          conducted a workshop titled Arasiyal 101, which familiarized delegates
+          with parliamentary procedures, debating formats, and the flow of
+          assembly discussions, equipping them with confidence and clarity. The
+          agenda,<strong
+            >“Review of the Prevailing Law and Order Conditions in Tamil
+            Nadu,”</strong
+          >
+          encouraged participants to critically analyze challenges, policy gaps,
+          and mechanisms for improvement. Over the two-day period, delegates
+          balanced parliamentary rigor with teamwork, innovative thought, and
+          persuasive communication, gaining firsthand experience of governance
+          responsibilities while fostering civic awareness and a deeper
+          understanding of democracy.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+      <img src="Tnla/DSC_2769.JPG" alt="Event" />
+      <div class="text">
+        <h2>Key Discussions and Deliberations</h2>
+        <p>
+          The debates tackled some of the most pressing challenges facing Tamil
+          Nadu’s law and order, including policing efficiency, judicial delays,
+          custodial accountability, cybercrime, and public safety. Government
+          benches proposed measures to make institutions more efficient,
+          introduce technologydriven monitoring, and strengthen rapid-response
+          systems, all while ensuring transparency and fairness. The opposition
+          drew attention to administrative lapses, community mistrust, and
+          socioeconomic factors behind unrest, stressing that systemic reforms
+          were just as important as enforcement. Delegates carefully considered
+          civil liberties alongside security concerns, proposing solutions that
+          aimed to protect individual rights while keeping the public safe.
+          Ideas ranged from improved grievance redressal systems and community
+          policing initiatives to educational programs for crime prevention.
+          Throughout these discussions, participants displayed sharp analytical
+          thinking, strategic reasoning, and collaborative decision-making. The
+          lively exchange of arguments and counterarguments created an authentic
+          legislative atmosphere. Beyond debating skills, students reflected on
+          the real-world impact of governance, showing how experiential learning
+          can prepare young minds to engage meaningfully with complex societal
+          issues.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <img src="Tnla/IMG_1522.JPG" alt="Event" />
+      <div class="text">
+        <h2>Leadership, Conduct, and Recognition</h2>
+        <p>
+          The TNLA Youth Parliamentary debate was formally presided over by
+          Speaker
+          <a
+            href="https://www.instagram.com/hariharasudhan_psk?igsh=MWdnam11Mno5NDdhYg=="
+            target="_blank"
+            class="highlighted"
+          >
+            Mr. HariHarasudhan S
+          </a>
+          and Deputy Speaker
+          <a
+            href="https://www.instagram.com/_.saiaakash_?igsh=azFncGN4dDJoeTRr"
+            target="_blank"
+            class="highlighted"
+          >
+            Mr. Sai Aakash V </a
+          >, whose guidance ensured fairness, discipline, and smooth
+          proceedings. Their leadership provided delegates a supportive
+          environment to present arguments, raise points of order, and
+          participate in meaningful discussion. At the conclusion of the two-day
+          event, top-performing delegates were recognized for clarity of
+          thought, research-backed arguments, and effective advocacy.
+          Certificates were also awarded to the Organising Committee and Liaison
+          Officers, acknowledging their dedication, coordination, and meticulous
+          planning. Beyond recognition, TNLA 2025 offered an immersive learning
+          platform to develop leadership, negotiation, and critical thinking
+          skills. The program emphasized teamwork, accountability, and ethical
+          decision-making, preparing delegates for future debates, simulations,
+          and civic engagements. The two days balanced structured governance
+          procedures with opportunities for creativity, discussion, and
+          problem-solving, leaving participants more confident, articulate, and
+          ready to contribute meaningfully to democratic discourse and civic
+          life.
+        </p>
+
+        <style>
+          .highlighted {
+            color: #f1c40f; /* default link color (you can change this) */
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+          }
+          .highlighted:hover {
+            color: #75600a; /* hover color */
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        </style>
+      </div>
+    </div>
+
+    <div class="section">
+      <img src="tnla/IMG_1294.JPG" alt="Event" />
+      <div class="text">
+        <h2>Broader Impact and Outcomes</h2>
+        <p>
+          Stepping into the roles of lawmakers, delegates at TNLA Youth
+          Parliament 2025 experienced firsthand the responsibilities,
+          challenges, and nuances of shaping public policy. The event provided a
+          platform to explore law enforcement, governance, and the societal
+          impact of legislation, encouraging participants to think critically
+          and collaboratively. Debates emphasized the balance between public
+          safety and civil liberties, while fostering skills such as analytical
+          reasoning, empathy, and persuasive communication. Beyond procedural
+          knowledge, students developed confidence, teamwork, and informed
+          decision-making, reflecting the Speakers’ Forum’s commitment to
+          nurturing articulate and responsible communicators. TNLA motivated
+          participants to pursue further parliamentary simulations, debates, and
+          civic initiatives, applying lessons learned to both academic and
+          real-world contexts. By blending rigorous debate with practical
+          exposure, the Youth Parliament bridged theory and practice, equipping
+          students to address societal challenges thoughtfully. Delegates left
+          inspired and prepared to uphold democratic principles, strengthening
+          the Forum’s reputation as a hub for leadership, critical thinking, and
+          civic engagement.
+        </p>
+      </div>
+    </div>
+    <section
+      style="padding: 60px 0; text-align: center; background: transparent"
+    >
+      <h2
+        style="
+          color: #f1c40f;
+          margin-bottom: 20px;
+          text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        "
+      >
+        Here's The After Movie
+      </h2>
+
+      <video
+        controls
+        style="
+          width: 90%;
+          height: 80vh;
+          object-fit: cover;
+          border-radius: 15px;
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+          background: rgba(0, 0, 0, 0.3); /* slight transparency so it blends */
+        "
+      >
+        <source src="TNLA AFTER MOVIE.mp4" type="video/mp4" />
+        Your browser does not support HTML5 video.
+      </video>
+    </section>
+
+    <!-- Footer -->
+    <footer data-aos="fade-up">
+      <p>
+        Contact us:
+        <a href="mailto:sf@svce.ac.in">sf@svce.ac.in</a>
+      </p>
+      <p>
+        Follow us on <a href="https://www.instagram.com/sf_svce">Instagram</a>
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

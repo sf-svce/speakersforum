@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us - Speakers' Forum</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: url("club.jpg") no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
+      }
+
+      /* Overlay for darkening background */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.55); /* subtle dim for readability */
+        z-index: -1;
+      }
+
+      /* Navbar - untouched */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 15px 40px;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .navbar .logo img {
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .navbar .links a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      .navbar .links a:hover {
+        color: #ffcc00;
+      }
+
+      /* Section Styling */
+      .section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 100px 10%;
+        gap: 50px;
+        color: white;
+        position: relative;
+      }
+
+      .section:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .section img {
+        width: 42%;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+      }
+      .section img:hover {
+        transform: scale(1.07);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 1);
+      }
+
+      .text {
+        flex: 1;
+        background: rgba(0, 0, 0, 0.65);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
+        line-height: 1.8;
+        animation: fadeIn 1.2s ease;
+      }
+
+      .text h2 {
+        color: #f1c40f;
+        margin-bottom: 20px;
+        font-size: 2.2rem;
+        font-weight: bold;
+        text-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+      }
+
+      .text p {
+        font-size: 1.1rem;
+      }
+
+      .section-title {
+        margin: 60px 0 30px;
+        font-size: 2.7rem;
+        font-weight: bold;
+        color: #f1c40f;
+        text-align: center;
+        text-shadow: 0 0 15px rgba(241, 196, 15, 0.6);
+        animation: pulse 3s infinite;
+      }
+
+      /* Footer - untouched */
+      footer {
+        background: #111;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer a {
+        color: #ffcc00;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          text-shadow: 0 0 10px rgba(241, 196, 15, 0.6),
+            0 0 20px rgba(241, 196, 15, 0.5);
+        }
+        50% {
+          text-shadow: 0 0 20px rgba(241, 196, 15, 0.9),
+            0 0 40px rgba(241, 196, 15, 0.7);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .section {
+          flex-direction: column !important;
+          text-align: center;
+        }
+        .section img {
+          width: 90%;
+        }
+        .text {
+          padding: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar" data-aos="fade-down">
+      <div class="logo">
+        <img src="SF logo.png" alt="Logo" />
+        Speakers' Forum
+      </div>
+      <div class="links">
+        <a href="homepage.html">Home</a>
+        <a href="about us.html">About Us</a>
+        <a href="office bearers.html">Office Bearers</a>
+        <a href="events.html">Events</a>
+      </div>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section">
+      <img src="DSC_2746.jpg" alt="Event" />
+      <div class="text">
+        <h2>Our Vision</h2>
+        <p>
+          The Students’ Forum envisions becoming a dynamic platform that
+          transforms voices into influence, ideas into impact, and individuals
+          into leaders. We seek to build a culture where every student—
+          regardless of background—finds the courage to speak, the clarity to
+          inspire, and the stage to shine. Our mission is to nurture confidence,
+          creativity, and leadership, turning students into changemakers who
+          uplift one another and leave a lasting impact.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+      <img src="Tnla/IMG_1294.JPG" alt="Event" />
+      <div class="text">
+        <h2>What We Do</h2>
+        <p>
+          <strong>MENTORSHIP:</strong> Language training beyond college hours is
+          given exclusively for all the students who volunteer for this program
+          through a detailed syllabus provided by a top corporate company. In
+          addition, students are taught public speaking by doing ice-breaking
+          sessions and workshops. <br /><br />
+          <strong>LANGUAGE TRAINING:</strong> Continuous exclusive sessions are
+          held to enhance students’ soft skills like people skills, leadership,
+          etc., to get through interviews and also to communicate effectively in
+          their future academic as well as professional settings. <br /><br />
+          <strong>WORKSHOPS:</strong> Geopolitics, Indian Polity, and
+          performative speaking arts are taught to interested students in
+          respective societies (MUN, DEBATE, and CULTURAL). Students also
+          represent the college in external events through the MUN Delegation,
+          Debate Contingent, and Cultural team. <br /><br />
+          <strong>PRESENTATIONS:</strong> We regularly train students to present
+          their papers, pitch ideas during hackathons, and deliver effective
+          presentations. We emphasize verbal and non-verbal etiquette and give
+          students the practice to confidently answer questions at these events.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <img src="Tnla/IMG_1341.JPG" alt="Event" />
+      <div class="text">
+        <h2>How We Do</h2>
+        <p>
+          At Speakers’ Forum, we know what it feels like to have something to
+          say, but not know how to say it. We’ve all been there, hands shaking,
+          voice trembling, thoughts racing. That’s why we’ve built a space where
+          your voice is acknowledged and made stronger. ,<br /><br />
+          Here, we don’t throw you on a stage and say, “go speak.”. We walk with
+          you, step by step, building the confidence to stand tall, the clarity
+          to speak well, and the presence to be remembered. <br /><br />
+          <strong>Here’s how we make it happen:</strong><br /><br />
+          • We recreate real pressure through MUNs, debates, and cultural
+          events, not to scare, but to prepare you for the world. You’ll learn
+          how to stay calm under pressure, speak with purpose, and think on your
+          feet like the leaders you admire as you step into their shoes and
+          discuss pressing issues.<br /><br />
+          • Our public speaking classes are spaces for honest feedback, personal
+          growth, and supportive learning. <br /><br />
+          • Through sessions on resume writing, group discussions, and interview
+          skills, we help you grow into someone who not only sounds confident
+          but feels confident in any room.<br /><br />
+          • With Computer-Assisted Language Learning, you’ll get to fine-tune
+          your accent, pronunciation, and fluency.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-title">
+      In a world full of speakers, be the one they remember.<br /><br />
+      Speakers’ Forum is ready, are you?<br /><br />
+    </div>
+
+    <!-- Footer -->
+    <footer data-aos="fade-up">
+      <p>
+        Contact us:
+        <a href="mailto:sf@svce.ac.in">sf@svce.ac.in</a>
+      </p>
+      <p>
+        Follow us on <a href="https://www.instagram.com/sf_svce">Instagram</a>
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

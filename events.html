@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events - Speakers' Forum</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: url("club.jpg") no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
+      }
+
+      /* Dark overlay */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+      }
+
+      /* Navbar - untouched */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 15px 40px;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .navbar .logo img {
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .navbar .links a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      .navbar .links a:hover {
+        color: #ffcc00;
+      }
+
+      /* Section Headings */
+      h1,
+      h2 {
+        font-weight: bold;
+        color: #f1c40f;
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+      }
+
+      h1::after,
+      h2::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: #f1c40f;
+        margin: 10px auto 0;
+        border-radius: 3px;
+      }
+
+      /* Card Styling */
+      .card {
+        border: none;
+        border-radius: 20px;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.75);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
+      }
+
+      .card img {
+        height: 230px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .card:hover img {
+        transform: scale(1.05);
+      }
+
+      .card-body {
+        padding: 25px;
+        color: #e0e0e0;
+      }
+
+      .event-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+      }
+
+      .card:hover .event-title {
+        color: #ffcc00;
+      }
+
+      .card-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      a.card-link {
+        text-decoration: none;
+        color: inherit;
+      }
+      .glow-text {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #fff; /* base color */
+        text-shadow: 0 0 5px #f1c40f, 0 0 10px #f1c40f, 0 0 20px #f1c40f; /* glow effect */
+        letter-spacing: 1px;
+      }
+      /* Footer */
+      footer {
+        background: #111;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer a {
+        color: #ffcc00;
+        text-decoration: none;
+      }
+      /* Responsive Tweaks */
+      @media (max-width: 992px) {
+        .card img {
+          height: 200px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .event-title {
+          font-size: 1.2rem;
+        }
+        .card-body {
+          padding: 18px;
+        }
+        .card-text {
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .card img {
+          height: 170px;
+        }
+        h1,
+        h2 {
+          font-size: 1.6rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar (unchanged) -->
+    <div class="navbar" data-aos="fade-down">
+      <div class="logo">
+        <img src="SF logo.png" alt="Logo" />
+        Speakers' Forum
+      </div>
+      <div class="links">
+        <a href="homepage.html">Home</a>
+        <a href="about us.html">About Us</a>
+        <a href="office bearers.html">Office Bearers</a>
+        <a href="events.html">Events</a>
+      </div>
+    </div>
+
+    <!-- Upcoming events -->
+    <div class="container py-5">
+      <h2 class="glow-text text-center my-5">Upcoming Events</h2>
+
+      <div class="row g-4">
+        <!-- Event 1 -->
+        <div class="col-md-6">
+          <a href="event1.html" class="card-link">
+            <div class="card">
+              <img src="club.jpg" class="card-img-top" alt="Event 1" />
+              <div class="card-body">
+                <h5 class="event-title">Callibarations</h5>
+                <p class="card-text"><strong>Date:</strong> September 2025</p>
+                <p class="card-text"><strong>Venue:</strong> To be announced</p>
+                <p class="card-text"><strong>Time:</strong> To be announced</p>
+                <p class="card-text">
+                  A vibrant cultural event designed especially for freshers,
+                  helping them break the ice, showcase their talents, and feel
+                  at home in the college environment.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="col-md-6">
+          <a href="event1.html" class="card-link">
+            <div class="card">
+              <img
+                src="clash of minds.JPG"
+                class="card-img-top"
+                alt="Event 2"
+              />
+              <div class="card-body">
+                <h5 class="event-title">Clash of Minds</h5>
+                <p class="card-text"><strong>Date:</strong> October 2025</p>
+                <p class="card-text"><strong>Venue:</strong> To be announced</p>
+                <p class="card-text"><strong>Time:</strong> To be announced</p>
+                <p class="card-text">
+                  An annual debate battle hosted by the Speakers’ Forum, where
+                  wit meets words and ideas collide.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Past Events -->
+    <div class="container py-5">
+      <h2 class="glow-text text-center my-5">Events So Far</h2>
+      <div class="row g-4">
+        <!-- Event 1 -->
+        <div class="col-md-6">
+          <a href="investiture.html" class="card-link">
+            <div class="card">
+              <img src="club.jpg" class="card-img-top" alt="Event 1" />
+              <div class="card-body">
+                <h5 class="event-title">Investiture</h5>
+                <p class="card-text"><strong>Date:</strong> 25th July 2025</p>
+                <p class="card-text">
+                  <strong>Venue:</strong> Library Seminar Hall
+                </p>
+                <p class="card-text">
+                  <strong>Time:</strong> 9:00 AM - 12:00 PM
+                </p>
+                <p class="card-text">
+                  A solemn ceremony where our newly elected leaders are
+                  entrusted with their roles.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="col-md-6">
+          <a href="TNLA.html" class="card-link">
+            <div class="card">
+              <img src="tero.JPG" class="card-img-top" alt="Event 2" />
+              <div class="card-body">
+                <h5 class="event-title">Youth Parliament</h5>
+                <p class="card-text">
+                  <strong>Date:</strong> 12th & 13th August 2025
+                </p>
+                <p class="card-text">
+                  <strong>Venue:</strong> Library Seminar Hall
+                </p>
+                <p class="card-text">
+                  <strong>Time:</strong> 9:00 AM - 3:00 PM
+                </p>
+                <p class="card-text">
+                  A mock Tamil Nadu Legislative Assembly session where students
+                  debated real issues.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <footer data-aos="fade-up">
+      <p>
+        Contact us:
+        <a href="mailto:sf@svce.ac.in">sf@svce.ac.in</a>
+      </p>
+      <p>
+        Follow us on <a href="https://www.instagram.com/sf_svce">Instagram</a>
+      </p>
+    </footer>
+    <!-- Footer (unchanged) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
