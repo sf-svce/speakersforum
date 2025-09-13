@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speakers' Forum</title>
+
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #333;
+        scroll-behavior: smooth;
+      }
+
+      /* Navbar */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 15px 40px;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .navbar .logo img {
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .navbar .links a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      .navbar .links a:hover {
+        color: #ffcc00;
+      }
+
+      /* Hero */
+      .hero {
+        text-align: center;
+        padding: 140px 20px;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
+          url("club.jpg") no-repeat center center/cover;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 56px;
+        margin-bottom: 20px;
+        text-shadow: 0 0 15px rgba(255, 204, 0, 0.8);
+      }
+
+      .hero p {
+        font-size: 20px;
+        max-width: 650px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      /* Section general */
+      section {
+        padding: 90px 20px;
+        text-align: center;
+        color: white;
+        position: relative;
+        z-index: 1;
+      }
+
+      section h2 {
+        font-size: 38px;
+        margin-bottom: 25px;
+        text-shadow: 0 0 12px rgba(255, 204, 0, 0.6);
+      }
+
+      section p {
+        max-width: 750px;
+        margin: 0 auto 35px;
+        font-size: 18px;
+        line-height: 1.7;
+        color: #f1f1f1;
+      }
+
+      /* Backgrounds for sections */
+      #about {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("tero.JPG") no-repeat center center/cover;
+      }
+
+      #events {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("nero.jpg") no-repeat center center/cover;
+      }
+
+      #office {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("hero.jpg") no-repeat center center/cover;
+      }
+
+      #whyjoin {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("zero.jpg") no-repeat center center/cover;
+      }
+
+      #gallery {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("fero.jpg") no-repeat center center/cover;
+      }
+
+      /* Cards (Events + Team + Benefits) */
+      .flex-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        background: rgba(38, 35, 35, 0.9);
+        color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        width: 250px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      .card img {
+        width: 100%;
+        border-radius: 50%;
+      }
+
+      /* Gallery images */
+      .gallery-images {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .gallery-images img {
+        width: 250px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-images img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Footer */
+      footer {
+        background: #111;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer a {
+        color: #ffcc00;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar" data-aos="fade-down">
+      <div class="logo">
+        <img src="SF logo.png" alt="Logo" />
+        Speakers' Forum
+      </div>
+      <div class="links">
+        <a href="about us.html">About Us</a>
+        <a href="office bearers.html">Office Bearers</a>
+        <a href="events.html">Events</a>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero" data-aos="zoom-in" data-aos-duration="1200">
+      <h1>Welcome to Speakers' Forum</h1>
+      <p>A platform where voices meet, ideas grow, and leaders are made.</p>
+    </div>
+
+    <!-- About Us -->
+    <section id="about" data-aos="fade-up">
+      <h2>Our Vision</h2>
+      <p>
+        To become the most dynamic students’ forum that transforms voices into
+        influence, ideas into impact, and individuals into leaders. We envision
+        a culture where every student, regardless of their background, finds the
+        courage to speak, the clarity to inspire, and a stage to shine.
+      </p>
+    </section>
+
+    <!-- Events -->
+    <section id="events" data-aos="fade-up" data-aos-delay="200">
+      <h2>Upcoming Events</h2>
+      <div class="flex-container">
+        <div class="card" data-aos="flip-left" data-aos-delay="300">
+          <h3>SIP/Callibs</h3>
+          <p>📅 September 2025</p>
+          <p></p>
+        </div>
+        <div class="card" data-aos="flip-left" data-aos-delay="400">
+          <h3>Debate Event</h3>
+          <p>📅 October 2025</p>
+          <p></p>
+        </div>
+        <div class="card" data-aos="flip-left" data-aos-delay="500">
+          <h3>Inter-college Cultural Event</h3>
+          <p>📅 january 2026</p>
+          <p></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Join Us -->
+    <section id="whyjoin" data-aos="zoom-in">
+      <h2>Why Join Us?</h2>
+      <div class="flex-container">
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          🎤 Improve public speaking
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+          🤝 Meet new people
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="400">
+          🏆 Compete in debates
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="500">
+          🌍 Build confidence
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" data-aos="fade-up">
+      <h2>Gallery</h2>
+      <div class="gallery-images">
+        <img src="hero.JPG" alt="Event 1" data-aos="zoom-in" />
+        <img
+          src="zero.JPG"
+          alt="Event 2"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        />
+        <img
+          src="galleria.jpg"
+          alt="Event 3"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+        />
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer data-aos="fade-up">
+      <p>
+        Contact us:
+        <a href="mailto:sf@svce.ac.in">sf@svce.ac.in</a>
+      </p>
+      <p>
+        Follow us on <a href="https://www.instagram.com/sf_svce">Instagram</a>
+      </p>
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 10,
+        once: true,
+      });
+    </script>
+  </body>
+</html>
