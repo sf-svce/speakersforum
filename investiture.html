@@ -12,7 +12,7 @@
       body {
         margin: 0;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: url("img_9431.JPG") no-repeat center center fixed;
+        background: url("club.JPG") no-repeat center center fixed;
         background-size: cover;
         position: relative;
         color: white;
@@ -191,6 +191,22 @@
           padding: 25px;
         }
       }
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          padding: 15px 20px;
+        }
+        .navbar .links {
+          margin-top: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .navbar .links a {
+          margin: 8px;
+          font-size: 14px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -201,7 +217,8 @@
         Speakers' Forum
       </div>
       <div class="links">
-        <a href="homepage.html">Home</a>
+        <a href="intramun.html">INTRA-MUN 2.0</a>
+        <a href="index.html">Home</a>
         <a href="about us.html">About Us</a>
         <a href="office bearers.html">Office Bearers</a>
         <a href="events.html">Events</a>

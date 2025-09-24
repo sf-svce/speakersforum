@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INTRA-MUN 2nd Edition</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: url("intramunbg.jpg") no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+      }
+
+      /* Overlay */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.65);
+        z-index: -1;
+      }
+
+      /* Navbar */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 15px 40px;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .navbar .logo img {
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .navbar .links a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      .navbar .links a:hover {
+        color: red;
+      }
+
+      /* Hero */
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 100px 10% 80px;
+      }
+
+      .hero-logo img {
+        width: 140px;
+        margin-bottom: 25px;
+      }
+
+      .hero-text h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #f1f1f1;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+      }
+
+      .hero-text h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: red;
+        text-transform: uppercase;
+        text-shadow: 0 0 12px darkred, 0 0 24px darkblue, 0 0 48px red;
+        margin: 0;
+      }
+
+      /* Countdown */
+      .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 40px 0;
+        flex-wrap: wrap;
+      }
+      .time-box {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+        min-width: 100px;
+        text-align: center;
+      }
+      .time-box span {
+        display: block;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ffb3b3;
+      }
+      .time-box small {
+        display: block;
+        font-size: 0.9rem;
+        margin-top: 8px;
+        color: #ccc;
+      }
+      .countdown-text {
+        text-align: center;
+        font-size: 1.1rem;
+        margin-top: 10px;
+        color: #ddd;
+      }
+      .countdown-buttons {
+        margin-top: 20px;
+        text-align: center;
+      }
+      .btn-custom {
+        display: inline-block;
+        padding: 12px 28px;
+        margin: 10px;
+        font-size: 1rem;
+        border-radius: 25px;
+        border: 2px solid #ffb3b3;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .btn-primary-custom {
+        background: #ffb3b3;
+        color: #000;
+      }
+      .btn-primary-custom:hover {
+        background: #e68c8c;
+      }
+      .btn-outline-custom {
+        background: transparent;
+        color: #ffb3b3;
+      }
+      .btn-outline-custom:hover {
+        background: #ffb3b3;
+        color: #000;
+      }
+
+      /* Info Boxes */
+      .info-section {
+        display: flex;
+        gap: 20px;
+        padding: 40px 10%;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .info-box {
+        flex: 1;
+        min-width: 280px;
+        background: rgba(0, 0, 0, 0.65);
+        border-radius: 12px;
+        padding: 25px;
+        color: #f1f1f1;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+      }
+      .info-box h3 {
+        color: #ff9f9f;
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+      }
+      .info-box p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      /* Committees */
+      .committees {
+        padding: 60px 10%;
+        text-align: center;
+      }
+      .committees h2 {
+        margin-bottom: 30px;
+        font-size: 2rem;
+        color: #ff5252;
+        text-shadow: 0 0 10px rgba(255, 80, 80, 0.6);
+      }
+      .committee-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+      }
+      .committee-box {
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 12px;
+        padding: 30px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      }
+      .committee-box:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+      }
+      .committee-box img {
+        max-width: 120px;
+        margin-bottom: 16px;
+      }
+      .committee-box h4 {
+        font-size: 1.2rem;
+        color: #ffb3b3;
+      }
+
+      /* Footer */
+      footer {
+        background: #111;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      footer a {
+        color: red;
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* ===== RESPONSIVE (phones) ===== */
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          padding: 15px 20px;
+        }
+        .navbar .links {
+          margin-top: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .navbar .links a {
+          margin: 8px;
+          font-size: 14px;
+        }
+        .hero {
+          padding: 70px 5% 50px;
+        }
+        .hero-logo img {
+          width: 100px;
+        }
+        .hero-text h1 {
+          font-size: 2rem;
+        }
+        .hero-text h3 {
+          font-size: 1rem;
+        }
+        .time-box {
+          min-width: 80px;
+          padding: 15px 20px;
+        }
+        .time-box span {
+          font-size: 1.5rem;
+        }
+        .time-box small {
+          font-size: 0.75rem;
+        }
+        .info-section {
+          padding: 30px 5%;
+        }
+        .info-box {
+          padding: 20px;
+        }
+        .committee-box {
+          padding: 20px;
+        }
+        .committee-box img {
+          max-width: 100px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-text h1 {
+          font-size: 1.6rem;
+        }
+        .hero-text h3 {
+          font-size: 0.9rem;
+        }
+        .btn-custom {
+          padding: 10px 20px;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <img src="SF logo.png" alt="Logo" />
+        Speakers' Forum
+      </div>
+      <div class="links">
+        <a href="intramun.html">INTRA-MUN 2.0</a>
+        <a href="index.html">Home</a>
+        <a href="about us.html">About Us</a>
+        <a href="office bearers.html">Office Bearers</a>
+        <a href="events.html">Events</a>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <!-- Logo in dead centre with space above -->
+      <div class="hero-logo">
+        <img src="munsoc logo 2.png" alt="MUNSOC Logo" />
+      </div>
+
+      <div class="hero-text">
+        <h3>SVCE MUN SOCIETY PRESENTS</h3>
+        <h1>INTRA-MUN 2ND EDITION</h1>
+      </div>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown">
+      <div class="time-box">
+        <span id="days">00</span>
+        <small>DAYS</small>
+      </div>
+      <div class="time-box">
+        <span id="hours">00</span>
+        <small>HOURS</small>
+      </div>
+      <div class="time-box">
+        <span id="minutes">00</span>
+        <small>MINUTES</small>
+      </div>
+      <div class="time-box">
+        <span id="seconds">00</span>
+        <small>SECONDS</small>
+      </div>
+    </div>
+    <div class="countdown-text">
+      PRELUDE.&nbsp&nbsp PERSIST.&nbsp&nbsp PREVAIL.
+    </div>
+    <div class="countdown-buttons">
+      <a
+        href="https://forms.gle/FRj79ANXNV9vuP4E7"
+        class="btn-custom btn-primary-custom"
+        >Register Now! →</a
+      >
+    </div>
+
+    <!-- Info Boxes -->
+    <div class="info-section">
+      <div class="info-box">
+        <h3>What is <strong>MUN?</strong></h3>
+        <p>
+          A <strong>Model United Nations (MUN)</strong> is a simulation of the United Nations
+          where students step into the shoes of diplomats and world leaders to
+          debate pressing global issues. It provides a platform for young minds
+          to research, discuss, and negotiate solutions to challenges such as
+          climate change, human rights, security, and economic development. <br></br>At
+          its core, MUN is not just about debating — it is about learning
+          diplomacy, teamwork, leadership, and critical thinking. Delegates
+          represent different countries, analyze policies, and craft
+          resolutions, all while maintaining international cooperation and
+          respect for diverse perspectives. <br></br>Participating in MUN develops
+          essential life skills such as public speaking, negotiation, and
+          problem-solving. It encourages participants to think beyond borders
+          and understand the complexities of international relations.<br></br> For many
+          students, MUN is also a place to meet like-minded peers, build
+          confidence, and discover their passion for leadership and global
+          affairs. Whether you aspire to be a diplomat, a lawyer, a business
+          leader, or simply want to sharpen your communication skills, MUN
+          provides an invaluable experience that prepares you for the real
+          world.
+        </p>
+      </div>
+      <div class="info-box">
+        <h3><strong>SVCEMUNSOC</strong></h3>
+        <p>The <strong>SVCEMUNSOC</strong> has established itself as a vibrant platform for debate, diplomacy, and discussion. Over the years, it has consistently provided students with opportunities to sharpen their skills in public speaking, negotiation, and leadership. Starting with Parliamentary Debates, the society built a strong foundation for structured argumentation and critical thinking. From there, it moved on to hosting the Tamil Nadu Legislative Assembly (TNLA) Simulation, where participants engaged with real-world governance and state-level policy making.<br></br>
+
+          With this experience, SVCEMUNSOC successfully launched its own INTRA-MUN, bringing the United Nations simulation to the SVCE campus. The event encouraged students to step into the shoes of diplomats, debate global issues, and draft impactful resolutions. Building on the overwhelming response, the society is now proud to present INTRA-MUN 2nd Edition<br></br>
+          
+          Backed by experience, enthusiasm, and a legacy of successful events, SVCEMUNSOC knows exactly how to organize and execute a Model United Nations. This year’s edition promises to be bigger, better, and more engaging, offering delegates an even richer platform to learn, debate, and lead.</p>
+      </div>
+    </div>
+
+    <!-- Committees -->
+    <div class="committees">
+      <h2>Committees</h2>
+      <div class="committee-grid">
+        <div class="committee-box" onclick="location.href='IPL.html'">
+          <img src="ipl 2.png" alt="Committee 1 Logo" />
+          <h4>IPL: Behind Closed Doors</h4>
+        </div>
+        <div class="committee-box" onclick="location.href='WARC.html'">
+          <img src="warc 2.png" alt="Committee 2 Logo" />
+          <h4>WAR Council</h4>
+        </div>
+        <div class="committee-box" onclick="location.href='aippm.html'">
+          <img src="aippm 2.png" alt="Committee 3 Logo" />
+          <h4>AIPPM</h4>
+        </div>
+        <div class="committee-box" onclick="location.href='IPC.html'">
+          <img src="ipc 2.png" alt="Committee 4 Logo" />
+          <h4>International Press Corps</h4>
+        </div>
+      </div>
+      <h4>Click on the committees to register.</h4>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>Contact us: <a href="mailto:sf@svce.ac.in">sf@svce.ac.in</a></p>
+      <p>
+        Follow us on <a href="https://www.instagram.com/sf_svce">Instagram</a>
+      </p>
+    </footer>
+
+    <script>
+      // Countdown Script
+      const targetDate = new Date("Oct 7, 2025 09:00:00").getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText =
+          days < 10 ? "0" + days : days;
+        document.getElementById("hours").innerText =
+          hours < 10 ? "0" + hours : hours;
+        document.getElementById("minutes").innerText =
+          minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("seconds").innerText =
+          seconds < 10 ? "0" + seconds : seconds;
+      }
+
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+    </script>
+  </body>
+</html>

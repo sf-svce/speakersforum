@@ -90,6 +90,10 @@
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
         background: rgba(255, 255, 255, 0.08);
         backdrop-filter: blur(10px);
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+        display: block;
       }
       .card:hover {
         transform: translateY(-10px) scale(1.03);
@@ -118,17 +122,11 @@
       .card:hover .card-title {
         color: #fff176;
       }
-      .highlighted {
-        color: #f1c40f;
-        font-weight: bold;
-        text-decoration: none;
-        transition: 0.3s;
-      }
 
-      .highlighted:hover {
-        color: #d4ac0d;
-        text-decoration: underline;
-        cursor: pointer;
+      /* Remove underline from clickable cards */
+      .card-link {
+        text-decoration: none !important;
+        color: inherit !important;
       }
 
       /* Footer */
@@ -143,6 +141,22 @@
         color: #ffcc00;
         text-decoration: none;
       }
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          padding: 15px 20px;
+        }
+        .navbar .links {
+          margin-top: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .navbar .links a {
+          margin: 8px;
+          font-size: 14px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -153,7 +167,8 @@
         Speakers' Forum
       </div>
       <div class="links">
-        <a href="homepage.html">Home</a>
+        <a href="intramun.html">INTRA-MUN 2.0</a>
+        <a href="index.html">Home</a>
         <a href="about us.html">About Us</a>
         <a href="office bearers.html">Office Bearers</a>
         <a href="events.html">Events</a>
@@ -166,374 +181,362 @@
 
       <!-- Card Grid -->
       <div class="row row-cols-1 row-cols-md-3 g-4">
-        <!-- Member 1 -->
+        <!-- Example: Member 1 -->
         <div class="col" data-aos="fade-up">
-          <div class="card">
-            <img src="officer bearers/pavan.jpg" alt="Member 1" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/pavanprakash_19?igsh=anI0bDA4eGh4eTI2"
-                  target="_blank"
-                  class="highlighted"
-                  >Pavan P</a
-                >
-              </h5>
-              <p class="card-text">President</p>
-              <p class="card-text">
-                When the going gets tough, only the toughest will keep going
-              </p>
+          <a
+            href="https://www.instagram.com/pavanprakash_19?igsh=anI0bDA4eGh4eTI2"
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/pavan.jpg" alt="Member 1" />
+              <div class="card-body">
+                <h5 class="card-title">Pavan P</h5>
+                <p class="card-text">President</p>
+                <p class="card-text">
+                  When the going gets tough, only the toughest will keep going
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
+        <!-- Repeat the same wrapping <a> around all cards -->
         <!-- Member 2 -->
         <div class="col" data-aos="fade-up" data-aos-delay="100">
-          <div class="card">
-            <img src="officer bearers/avila.jpg" alt="Member 2" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/avilayp_9905?igsh=bG9qc3gxY3E2NjFr"
-                  target="_blank"
-                  class="highlighted"
-                  >Tejas Avila Margret Y P</a
-                >
-              </h5>
-              <p class="card-text">Vice President</p>
-              <p class="card-text">Making Impact look Effortless</p>
+          <a
+            href="https://www.instagram.com/avilayp_9905?igsh=bG9qc3gxY3E2NjFr"
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/avila.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Thejas Avila Margret Y P</h5>
+                <p class="card-text">Vice President</p>
+                <p class="card-text">Making Impact look Effortless</p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Member 3 -->
-        <div class="col" data-aos="fade-up" data-aos-delay="200">
-          <div class="card">
-            <img src="officer bearers/sai.jpg" alt="Member 3" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/_.saiaakash_?igsh=azFncGN4dDJoeTRr"
-                  target="_blank"
-                  class="highlighted"
-                  >Sai Aakash V</a
-                >
-              </h5>
-              <p class="card-text">Director of Operations</p>
-              <p class="card-text">
-                Where ideas meet Execution thats where the Director of
-                Operations thrives
-              </p>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="https://www.instagram.com/_.saiaakash_?igsh=azFncGN4dDJoeTRr"
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/sai.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Sai Aakash</h5>
+                <p class="card-text">Director of Operations</p>
+                <p class="card-text">
+                  Where ideas meet Execution thats where the Director of
+                  Operations thrives
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Member 4 -->
-        <div class="col" data-aos="fade-up" data-aos-delay="300">
-          <div class="card">
-            <img src="officer bearers/akshara.jpg" alt="Member 4" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/ak_sharaaaa?igsh=Nno5YmdxN2tveW5w"
-                  target="_blank"
-                  class="highlighted"
-                  >Akshara B</a
-                >
-              </h5>
-              <p class="card-text">Director of Teams</p>
-              <p class="card-text">If they attack, we shall fight to the end</p>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="https://www.instagram.com/ak_sharaaaa?igsh=Nno5YmdxN2tveW5w"
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/akshara.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Akshara B</h5>
+                <p class="card-text">Director of Teams</p>
+                <p class="card-text">
+                  If they attack, we shall fight to the end
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Member 5 -->
-        <div class="col" data-aos="fade-up" data-aos-delay="400">
-          <div class="card">
-            <img src="officer bearers/sanjana.jpg" alt="Member 5" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/sanjanamadankumar?igsh=MWl2cmo5MTUyZWJkcA=="
-                  target="_blank"
-                  class="highlighted"
-                  >Sanjana Madankumar</a
-                >
-              </h5>
-              <p class="card-text">Director of Mentorship</p>
-              <p class="card-text">ற்றது கை மண்ணளவு கல்லாதது உலக அளவ</p>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="https://www.instagram.com/sanjanamadankumar?igsh=MWl2cmo5MTUyZWJkcA=="
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/sanjana.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Sanjana Madankumar</h5>
+                <p class="card-text">Director of Mentorship</p>
+                <p class="card-text">ற்றது கை மண்ணளவு கல்லாதது உலக அளவ</p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Member 6 -->
-        <div class="col" data-aos="fade-up" data-aos-delay="500">
-          <div class="card">
-            <img src="officer bearers/eknath.jpg" alt="Member 6" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/dharan1._?igsh=bTg0Z214Z29zd3V5"
-                  target="_blank"
-                  class="highlighted"
-                  >Dharanidharan N</a
-                >
-              </h5>
-              <p class="card-text">Joint Secretary</p>
-              <p class="card-text">
-                He that is slow to Anger is better than the Mighty
-              </p>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="https://www.instagram.com/dharan1._?igsh=bTg0Z214Z29zd3V5"
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/eknath.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Dharanidharan N</h5>
+                <p class="card-text">Joint Secretary</p>
+                <p class="card-text">
+                  He that is slow to Anger is better than the Mighty
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Member 7 -->
-        <div class="col" data-aos="fade-up" data-aos-delay="600">
-          <div class="card">
-            <img src="officer bearers/shake.jpg" alt="Member 7" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/_its.shaik?igsh=Nnh2bmk0YW8zbzFl"
-                  target="_blank"
-                  class="highlighted"
-                  >Shaik Aadhil</a
-                >
-              </h5>
-              <p class="card-text">Treasurer</p>
-              <p class="card-text">
-                I'm not a Businessman, I'm the Business, Man
-              </p>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="https://www.instagram.com/_its.shaik?igsh=Nnh2bmk0YW8zbzFl"
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/shake.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Shaik Aadhil</h5>
+                <p class="card-text">Treasurer</p>
+                <p class="card-text">
+                  I'm not a Businessman, I'm the Business, Man
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Member 8 -->
-        <div class="col" data-aos="fade-up" data-aos-delay="700">
-          <div class="card">
-            <img src="officer bearers/krishanth.jpg" alt="Member 8" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/krishanth_b?igsh=MTQ3azRndzB4NjRpdw=="
-                  target="_blank"
-                  class="highlighted"
-                  >Krishanth Balagopal</a
-                >
-              </h5>
-              <p class="card-text">Head of Delegation, MUNSOC</p>
-              <p class="card-text">Words are Beautiful, Action is Supreme</p>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="https://www.instagram.com/krishanth_b?igsh=MTQ3azRndzB4NjRpdw=="
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/krishanth.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Krishanth Balagopal</h5>
+                <p class="card-text">Head of Delegation, MUNSOC</p>
+                <p class="card-text">Words are Beautiful, Action is Supreme</p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Member 9 -->
-        <div class="col" data-aos="fade-up" data-aos-delay="800">
-          <div class="card">
-            <img src="officer bearers/anirud.jpg" alt="Member 9" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/anirud_45?igsh=MWE2czBvbGFrdmRoZw=="
-                  target="_blank"
-                  class="highlighted"
-                  >Guru Anirud V</a
-                >
-              </h5>
-              <p class="card-text">Head of Research & Training, MUNSOC</p>
-              <p class="card-text">I don't play the Odds, I play the Man</p>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="https://www.instagram.com/anirud_45?igsh=MWE2czBvbGFrdmRoZw=="
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/anirud.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Guru Anirud</h5>
+                <p class="card-text">Head of Research & Training, MUNSOC</p>
+                <p class="card-text">I don't play the Odds, I play the Man</p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Member 10 -->
-        <div class="col" data-aos="fade-up" data-aos-delay="900">
-          <div class="card">
-            <img src="officer bearers/hannah.jpg" alt="Member 10" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/__hannahhfelinn?igsh=ajlheXZrZmdwZmxi"
-                  target="_blank"
-                  class="highlighted"
-                  >Hannah Felin</a
-                >
-              </h5>
-              <p class="card-text">Convenor, DEBSOC</p>
-              <p class="card-text">
-                The harder the rain, honey, the Sweeter the Sun
-              </p>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="https://www.instagram.com/__hannahhfelinn?igsh=ajlheXZrZmdwZmxi"
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/hannah.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Hannah Felin</h5>
+                <p class="card-text">Convenor, DEBSOC</p>
+                <p class="card-text">
+                  The harder the rain, honey, the Sweeter the Sun
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Member 11 -->
-        <div class="col" data-aos="fade-up" data-aos-delay="1000">
-          <div class="card">
-            <img src="officer bearers/pranav.jpg" alt="Member 11" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/balabranab?igsh=MWVnaHR2cmFuYnZmOA=="
-                  target="_blank"
-                  class="highlighted"
-                  >Balapranav K</a
-                >
-              </h5>
-              <p class="card-text">Head of Training & Development, DEBSOC</p>
-              <p class="card-text">
-                What's a King to a God? What's a God to a non-believer?
-              </p>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="https://www.instagram.com/balabranab?igsh=MWVnaHR2cmFuYnZmOA=="
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/pranav.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Balapranav K</h5>
+                <p class="card-text">Head of Training & Development, DEBSOC</p>
+                <p class="card-text">
+                  What's a King to a God? What's a God to a non-believer?
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Member 12 -->
-        <div class="col" data-aos="fade-up" data-aos-delay="1100">
-          <div class="card">
-            <img src="officer bearers/shawn.jpg" alt="Member 12" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/shawn._.abraham?igsh=MWtxaGFpejVkdzI4ag=="
-                  target="_blank"
-                  class="highlighted"
-                  >Shawn Abraham</a
-                >
-              </h5>
-              <p class="card-text">Head of Cultural Team</p>
-              <p class="card-text">
-                If you want to Win the Lottery, you have to make the Money to
-                buy the Ticket
-              </p>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="https://www.instagram.com/shawn._.abraham?igsh=MWtxaGFpejVkdzI4ag=="
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/shawn.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Shawn Abraham</h5>
+                <p class="card-text">Head of Cultural Team</p>
+                <p class="card-text">
+                  If you want to Win the Lottery, you have to make the Money to
+                  buy the Ticket
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Member 13 -->
-        <div class="col" data-aos="fade-up" data-aos-delay="1200">
-          <div class="card">
-            <img src="officer bearers/bhusika.jpg" alt="Member 13" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/bhushikaaaaa?igsh=Z29sb3doZHdwdHNs"
-                  target="_blank"
-                  class="highlighted"
-                  >Bhushika R</a
-                >
-              </h5>
-              <p class="card-text">Head of Event Management</p>
-              <p class="card-text">
-                Give me 6 hours to chop down a tree and I will spend the first
-                four sharpening the axe
-              </p>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="https://www.instagram.com/bhushikaaaaa?igsh=Z29sb3doZHdwdHNs"
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/bhusika.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Bhushika R</h5>
+                <p class="card-text">Head of Event Management</p>
+                <p class="card-text">
+                  Give me 6 hours to chop down a tree and I will spend the first
+                  four sharpening the axe
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Member 14 -->
-        <div class="col" data-aos="fade-up" data-aos-delay="1300">
-          <div class="card">
-            <img src="officer bearers/harini.jpg" alt="Member 14" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/harini._527?igsh=MW00ZGwxNTNsdG54dg=="
-                  target="_blank"
-                  class="highlighted"
-                  >Sai Harini B S</a
-                >
-              </h5>
-              <p class="card-text">Head of Design</p>
-              <p class="card-text">
-                You gotta make your own kinda music, Sing your own special song
-              </p>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="https://www.instagram.com/harini._527?igsh=MW00ZGwxNTNsdG54dg=="
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/harini.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Sai Harini B S</h5>
+                <p class="card-text">Head of Design</p>
+                <p class="card-text">
+                  You gotta make your own kinda music, Sing your own special
+                  song
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Member 15 -->
-        <div class="col" data-aos="fade-up" data-aos-delay="1400">
-          <div class="card">
-            <img src="officer bearers/athmaja.jpg" alt="Member 15" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/_athmajagugan_?igsh=ZWNnZnZoaDh6aDJ4"
-                  target="_blank"
-                  class="highlighted"
-                  >Athmaja G</a
-                >
-              </h5>
-              <p class="card-text">Head of Content and Editorial</p>
-              <p class="card-text">
-                And perhaps it will be pleasing to have remembered those things
-                one day
-              </p>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="https://www.instagram.com/_athmajagugan_?igsh=ZWNnZnZoaDh6aDJ4"
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/athmaja.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Athmaja G</h5>
+                <p class="card-text">Head of Content and Editorial</p>
+                <p class="card-text">
+                  And perhaps it will be pleasing to have remembered those
+                  things one day
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Member 16 -->
-        <div class="col" data-aos="fade-up" data-aos-delay="1500">
-          <div class="card">
-            <img src="officer bearers/shriram.jpg" alt="Member 16" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/shirazushriram?igsh=MTc1Z2Vsa2J4Nmg2Yw=="
-                  target="_blank"
-                  class="highlighted"
-                  >E Shriram</a
-                >
-              </h5>
-              <p class="card-text">Head of Social and Visual Media</p>
-              <p class="card-text">
-                Do not go gentle into that good night; rage against the dying of
-                the light
-              </p>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="https://www.instagram.com/shirazushriram?igsh=MTc1Z2Vsa2J4Nmg2Yw=="
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/shriram.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">E Shriram</h5>
+                <p class="card-text">Head of Social and Visual Media</p>
+                <p class="card-text">
+                  Do not go gentle into that good night; rage against the dying
+                  of the light
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Member 17 -->
-        <div class="col" data-aos="fade-up" data-aos-delay="1600">
-          <div class="card">
-            <img src="officer bearers/akshayath .jpg" alt="Member 17" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/akshayath_?igsh=Y3FhNmo5Y2FjaGp3"
-                  target="_blank"
-                  class="highlighted"
-                  >Akshayath V</a
-                >
-              </h5>
-              <p class="card-text">Head of Business Relations</p>
-              <p class="card-text">Watch your tone BOY</p>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="https://www.instagram.com/akshayath_?igsh=Y3FhNmo5Y2FjaGp3"
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/akshayath .jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Akshayath V</h5>
+                <p class="card-text">Head of Business Relations</p>
+                <p class="card-text">Watch your tone BOY</p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Member 18 -->
-        <div class="col" data-aos="fade-up" data-aos-delay="1700">
-          <div class="card">
-            <img src="officer bearers/abrar.jpg" alt="Member 18" />
-            <div class="card-body">
-              <h5 class="card-title">
-                <a
-                  href="https://www.instagram.com/abrarr2703?igsh=MWUyNDJsN25tNWI3ZQ=="
-                  target="_blank"
-                  class="highlighted"
-                  >Abrar</a
-                >
-              </h5>
-              <p class="card-text">Head of Tech</p>
-              <p class="card-text">I made this Website happen.</p>
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <a
+            href="https://www.instagram.com/abrarr2703?igsh=MWUyNDJsN25tNWI3ZQ=="
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="officer bearers/abrar.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Abrar</h5>
+                <p class="card-text">Head of Tech</p>
+                <p class="card-text">I made this Website Happen.</p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
+        <!-- You will repeat this exact structure (col > a > card) for ALL members -->
+        <!-- ... copy this pattern for members 3 to 18 with their respective links ... -->
       </div>
     </div>
 

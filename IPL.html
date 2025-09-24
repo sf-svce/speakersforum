@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPL: Behind Closed Doors</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: url("intramunbg.jpg") no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+      }
+
+      /* Navbar */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 15px 40px;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        font-weight: bold;
+      }
+      .navbar .logo img {
+        height: 40px;
+        margin-right: 10px;
+      }
+      .navbar .links a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+      .navbar .links a:hover {
+        color: red;
+      }
+
+      /* Hero */
+      .hero {
+        text-align: center;
+        padding: 80px 10% 50px;
+      }
+      .hero h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        color: red;
+        text-shadow: 0 0 12px darkred, 0 0 24px darkblue, 0 0 48px red;
+        margin-bottom: 20px;
+      }
+      .hero {
+        text-align: center;
+        padding: 80px 10% 50px;
+      }
+
+      .hero-logo img {
+        max-width: 150px; /* adjust size */
+        margin-bottom: 20px; /* space between logo and title */
+      }
+
+      /* Content */
+      .content {
+        padding: 40px 12%;
+        text-align: center;
+      }
+      .content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 25px;
+      }
+
+      /* EB Section */
+      .card {
+        border: none;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+      .card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      }
+      .card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+      }
+      .card-body {
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+      .card-title {
+        margin-bottom: 8px;
+        font-size: 1.35rem;
+        font-weight: 600;
+        color: red;
+        text-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
+        transition: color 0.3s;
+      }
+      .card:hover .card-title {
+        color: darkred;
+      }
+
+      /* Remove underline from clickable cards */
+      .card-link {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+
+      /* Registration Box */
+      .register-btn {
+        display: block;
+        margin: 40px auto;
+        padding: 12px 28px;
+        font-size: 1rem;
+        border-radius: 25px;
+        border: 2px solid blue;
+        background: red;
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center;
+        transition: all 0.3s;
+        max-width: 220px;
+      }
+      .register-btn:hover {
+        background: #e68c8c;
+      }
+      /* Button Group */
+      .button-group {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* space between buttons */
+        margin: 40px 0;
+      }
+
+      /* Common Button Style */
+      .custom-btn {
+        padding: 12px 28px;
+        font-size: 1rem;
+        border-radius: 25px;
+        border: 2px solid darkblue;
+        background: darkred;
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center;
+        transition: all 0.3s;
+        width: 220px; /* fixed width so both are same size */
+        display: inline-block;
+      }
+
+      .custom-btn:hover {
+        background: #e68c8c;
+      }
+
+      /* Text Section Layout */
+      /* Text Section Layout - add side spacing */
+      .section {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        margin: 40px auto;
+        padding: 0 8%; /* side space from page edges */
+        flex-wrap: wrap;
+      }
+
+      .text {
+        flex: 1;
+        min-width: 300px;
+        background: rgba(0, 0, 0, 0.65);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
+        line-height: 1.8;
+        animation: fadeIn 1.2s ease;
+        text-align: left;
+      }
+
+      /* Headings */
+      .text h2 {
+        color: red;
+        margin-bottom: 20px;
+        font-size: 2.2rem;
+        font-weight: bold;
+        text-shadow: 0 0 10px darkred;
+      }
+
+      .text p {
+        font-size: 1.1rem;
+      }
+
+      /* Mobile: stack vertically */
+      @media (max-width: 768px) {
+        .text {
+          width: 100%;
+        }
+      }
+
+      /* Footer */
+      footer {
+        background: #111;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      footer a {
+        color: red;
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .content {
+          padding: 30px 8%;
+        }
+        .content p {
+          font-size: 1rem;
+        }
+      }
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          padding: 15px 20px;
+        }
+        .navbar .links {
+          margin-top: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .navbar .links a {
+          margin: 8px;
+          font-size: 14px;
+        }
+    }
+
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <img src="SF logo.png" alt="Logo" />
+        Speakers' Forum
+      </div>
+      <div class="links">
+        <a href="intramun.html">INTRA-MUN 2.0</a>
+        <a href="index.html">Home</a>
+        <a href="about us.html">About Us</a>
+        <a href="office bearers.html">Office Bearers</a>
+        <a href="events.html">Events</a>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-logo">
+        <img src="ipl 2.png" alt="ipl" />
+      </div>
+      <h1>IPL: Behind Closed Doors</h1>
+    </div>
+
+    <div class="section">
+      <div class="text">
+        <h2>Committee Description</h2>
+        <p>The <strong>Indian Premier League (IPL) </strong> Committee is one of the most exciting and entertaining simulations that SVCEMUNSOC offers. While many Model United Nations committees focus on serious issues of diplomacy, policy, and governance, the IPL brings a refreshing twist by combining the thrill of sports with the spirit of debate.<br></br>
+
+          In this committee, delegates step into the shoes of franchise owners, team managers, players, sponsors, or members of the cricket board. They negotiate trades, build strategies, debate controversies, and make crucial decisions that can change the fate of their teams. From handling sponsorship deals to bidding wars in auctions, every session is packed with energy, competition, and fun.<br></br>
+          
+          The IPL committee proves that MUN is not only about serious discussions on global politics but also about creating spaces where participants can relax, laugh, and bond through their love of sports. It adds a lighter, more playful dimension to the overall conference experience.<br></br>
+          
+          Through this, SVCEMUNSOC shows its commitment to balancing serious diplomacy with enjoyable experiences, ensuring that every delegate leaves with knowledge, memories, and smiles.</div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-logo">
+        </div>
+        <h1>Meet The Executive Board Members!</h1>
+      </div>
+
+    <!-- EB Section -->
+    <!-- EB Section -->
+    <div class="container my-5">
+      <div class="row g-4 justify-content-center">
+        <!-- Member 1 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <a
+            href="https://www.instagram.com/pavanprakash_19?igsh=anI0bDA4eGh4eTI2"
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="pranavp.jpg" alt="Member 1" />
+              <div class="card-body">
+                <h5 class="card-title">Pranav Prakash</h5>
+                <p class="card-text">Co-Chairperson</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <a
+            href="https://www.instagram.com/pavanprakash_19?igsh=anI0bDA4eGh4eTI2"
+            target="_blank"
+            class="card-link"
+          >
+            <div class="card">
+              <img src="bharath.jpg" alt="Member 2" />
+              <div class="card-body">
+                <h5 class="card-title">Bharath</h5>
+                <p class="card-text">Co-Chairperson</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+    <div class="button-group">
+      <a href="background-guides.pdf" class="custom-btn">Background Guide</a>
+      <a href="https://forms.gle/FRj79ANXNV9vuP4E7" class="custom-btn"
+        >Register Now!</a
+      >
+    </div>
+
+    <!-- Footer -->
+        <footer>
+      <p>Contact us: <a href="mailto:sf@svce.ac.in">sf@svce.ac.in</a></p>
+      <p>
+        Follow us on <a href="https://www.instagram.com/sf_svce">Instagram</a>
+      </p>
+    </footer>
+  </body>
+</html>

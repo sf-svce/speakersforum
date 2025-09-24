@@ -53,6 +53,37 @@
         color: #ffcc00;
       }
 
+      /* Scrolling Text Bar */
+      .scroll-bar {
+        background: rgba(0, 0, 0, 0.85);
+        overflow: hidden;
+        white-space: nowrap;
+        border-top: 2px solid #ffcc00;
+        border-bottom: 2px solid #ffcc00;
+        color: #ffcc00;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .scroll-content {
+        display: inline-block;
+        padding: 12px 0;
+        animation: scroll-left 25s linear infinite;
+      }
+
+      .scroll-content span {
+        margin: 0 50px;
+      }
+
+      @keyframes scroll-left {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
       /* Hero */
       .hero {
         text-align: center;
@@ -111,17 +142,17 @@
 
       #office {
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-          url("hero.jpg") no-repeat center center/cover;
+          url("zero.JPG") no-repeat center center/cover;
       }
 
       #whyjoin {
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-          url("zero.jpg") no-repeat center center/cover;
+          url("hero.JPG") no-repeat center center/cover;
       }
 
       #gallery {
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-          url("fero.jpg") no-repeat center center/cover;
+          url("galleria.jpg") no-repeat center center/cover;
       }
 
       /* Cards (Events + Team + Benefits) */
@@ -183,6 +214,22 @@
         color: #ffcc00;
         text-decoration: none;
       }
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          padding: 15px 20px;
+        }
+        .navbar .links {
+          margin-top: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .navbar .links a {
+          margin: 8px;
+          font-size: 14px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -193,9 +240,20 @@
         Speakers' Forum
       </div>
       <div class="links">
+        <a href="intramun.html">INTRA-MUN 2.0</a>
         <a href="about us.html">About Us</a>
         <a href="office bearers.html">Office Bearers</a>
         <a href="events.html">Events</a>
+      </div>
+    </div>
+
+    <!-- Scrolling Text Bar -->
+    <div class="scroll-bar">
+      <div class="scroll-content">
+        <span>Registration for INTRA-MUN 2nd Edition is now live!</span> |
+        <span>Workshop for INTRA-MUN to happen soon.</span> |
+        <span>INTRA-MUN 2nd Edition is to be held on 7th,8th OCT</span> |
+        <span>Follow us on instagram @sf_svce for more updates!</span>
       </div>
     </div>
 
@@ -226,12 +284,12 @@
           <p></p>
         </div>
         <div class="card" data-aos="flip-left" data-aos-delay="400">
-          <h3>Debate Event</h3>
+          <h3>INTRA-MUN</h3>
           <p>📅 October 2025</p>
           <p></p>
         </div>
         <div class="card" data-aos="flip-left" data-aos-delay="500">
-          <h3>Inter-college Cultural Event</h3>
+          <h3>SVCEMUN</h3>
           <p>📅 january 2026</p>
           <p></p>
         </div>
