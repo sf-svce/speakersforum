@@ -1,0 +1,294 @@
+<html>
+    <head>
+        <style>
+            /* Navbar */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 15px 40px;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .navbar .logo img {
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .navbar .links a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        transition: color 0.3s;
+        font-size: 19px;
+      }
+
+      .navbar .links a:hover {
+        color: #ffcc00;
+      }
+ /* Footer */
+      footer {
+        background: #111;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 27px;
+      }
+      footer a {
+        color: red;
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          padding: 15px 20px;
+        }
+        .navbar .links {
+          margin-top: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .navbar .links a {
+          margin: 8px;
+          font-size: 14px;
+        }
+    }
+        </style>
+        
+        <style>
+            @font-face {
+  font-family: 'Aprila';
+  src: url('../fonts/Aprila-Font/Aprila-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Aprila';
+  src: url('../fonts/Aprila-Font/Aprila-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Aprila';
+  src: url('../fonts/Aprila-Font/Aprila-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Aprila';
+  src: url('../fonts/Aprila-Font/Aprila-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Aprila';
+  src: url('../fonts/Aprila-Font/Aprila-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Aprila';
+  src: url('../fonts/Aprila-Font/Aprila-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Aprila';
+  src: url('../fonts/Aprila-Font/Aprila-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+            body{
+                background-image:url("../static/svcemun26_bg.jpg") ;
+                background-attachment: fixed;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+          /* h1{
+                color: #FAF9D0;
+                text-align: center;
+                font-size: 100px;
+                font-family: 'Aprila', sans-serif;
+                font-weight: 700;
+            }
+           */
+            .munlogo{
+                display: flex;
+                justify-content: center;
+                align-items: center;    
+            
+                }
+           
+            .munlogo img {
+                max-width: 100%;
+               max-height: 100%; 
+               width: 200px;   
+             }
+
+             h2{
+                color: wheat;
+                text-align: center;
+                font-size: 36px;
+                font-family: 'Aprila', sans-serif;
+                font-weight: 500;
+             }
+
+             .register_btn{
+                display: inline-block;
+                padding: 30px 30px;
+                font-size: 35px;
+                font-weight: 800;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                color: #fff;
+                background-color: #F8F7CE;
+                border: none;
+                border-radius: 20px;
+                box-shadow: 0 9px #C54752;
+                color: #cd9575;
+                font-family: 'Aprila', sans-serif;
+                justify-content: center;
+                align-items: center;
+                text-shadow: rgb(164, 150, 150) 10px 10px 20px;
+             }
+             .register_btn.active{
+                box-shadow: 0 5px #EFD9AF;
+  transform: translateY(4px);
+             }
+
+             
+            .popupanimate-charcter
+{
+    color: #FAF9D0;
+                text-align: center;
+                justify-content: center;
+                font-size: 100px;
+                font-family: 'Aprila', sans-serif;
+                font-weight: 700;
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    white 0%,
+    #B28241 29%,
+    #F3D199  67%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.popupname,
+.popupanimate-charcter {
+  text-align: center;
+}
+
+.muntitle{
+     display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;
+}
+
+        </style>
+        
+    </head>
+    <body>
+        <!-- Navbar -->
+    <div class="navbar" data-aos="fade-down">
+      <div class="logo">
+        <img src="..\static\SF logo.png" alt="Logo" />
+        Speakers' Forum
+      </div>
+      <div class="links">
+        <a href="svcemun26.html">SVCEMUN26</a>
+        <a href="../index.html">Home</a>
+        <a href="intramun.html">INTRA-MUN 2.0</a>
+        <a href="about us.html">About Us</a>
+        <a href="office bearers.html">Office Bearers</a>
+        <a href="events.html">Events</a>
+      </div>
+    </div>
+
+    <!--Logo-->
+        <div class="munlogo">
+        <img src="../static/munsoc logo 2.png" alt="MUNSOC Logo" />
+        </div>
+
+
+<!--Title-->
+<div class="muntitle">
+        <h1 class="popupanimate-charcter"> SVCE MUN' 26 </h1>
+        </div>
+
+<!--Countdown-->
+        <div><h2 style="text-align: center; size: 36px;color: wheat;">(Countdown Here)</h2></div>
+
+<!--moto-->
+        <h2>Aspire.Act.Achieve</h3>
+
+<!--Register_button-->
+            <div style="text-align: center;">
+            <a href="google.com">
+                <button class="register_btn">Register NOW!</button>
+            </a>
+            </div>
+
+<!--Message_secretary_general-->
+            <div>
+                <h2>(Message from Secretary General here)</h2>
+            </div>
+<!--Committees-->
+            <div>
+                <h2>(Committee details here)</h2>
+            </div>
+<!--Itenary-->
+            <div>
+                <h2>(Itenary here)</h2>
+            </div>
+<!--Secretariat members-->
+            <div>
+                <h2>(Secretariat members here)</h2>
+            </div>
+
+        <!-- Footer -->
+    <footer>
+      <p>Contact us: <a href="mailto:sf@svce.ac.in">sf@svce.ac.in</a></p>
+      <p>
+        Follow us on <a href="https://www.instagram.com/sf_svce">Instagram</a>
+      </p>
+    </footer>
+
+    </body>
+</html>
