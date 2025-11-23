@@ -1,0 +1,480 @@
+/* ========================================
+   MAIN STYLESHEET
+   SVCEMUN'26 - Modern MUN Conference Website
+   ======================================== */
+
+/* ==================
+   CSS MODULE IMPORTS
+   ================== */
+
+/* 1. Design System Variables */
+@import url('variables.css');
+
+/* 2. Reset & Base Styles */
+@import url('reset.css');
+
+/* 3. Typography */
+@import url('typography.css');
+
+/* 4. Layout System */
+@import url('layout.css');
+
+/* 5. Components */
+@import url('components.css');
+
+/* 6. Animations */
+@import url('animations.css');
+
+/* ==================
+   CUSTOM OVERRIDES & SPECIFIC STYLES
+   ================== */
+
+/* Logo Styling */
+.munlogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--space-8);
+}
+
+.munlogo img {
+  max-width: 200px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Event Header */
+.event-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12) var(--container-padding);
+  position: relative;
+}
+
+/* Main Title */
+.muntitle {
+  margin: var(--space-6) 0 var(--space-12) 0;
+}
+
+/* ==================
+   SECTION-SPECIFIC STYLES
+   ================== */
+
+/* Secretary General Message Section */
+.alignspeech {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  max-width: var(--max-width-lg);
+  margin: var(--space-8) auto;
+}
+
+.speechcard {
+  flex: 1;
+  min-width: 280px;
+  max-width: 320px;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  border: 4px solid var(--accent-gold);
+  background-color: rgba(108, 63, 68, 0.9);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.speechcard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-2xl);
+}
+
+.speechcard img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.speechname {
+  font-family: var(--font-primary);
+  font-size: var(--text-xl);
+  font-weight: var(--font-black);
+  color: var(--accent-gold-light);
+  padding: var(--space-3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.speechtitle {
+  font-family: var(--font-secondary);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--text-muted);
+  padding: 0 var(--space-3) var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.speechmessage {
+  font-family: var(--font-secondary);
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  color: var(--accent-gold-light);
+  text-align: center;
+  line-height: var(--leading-relaxed);
+  max-width: 800px;
+  margin: var(--space-6) auto;
+  padding: 0 var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .alignspeech {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .speechcard {
+    max-width: 100%;
+  }
+}
+
+/* ==================
+   ITINERARY SECTION
+   ================== */
+
+.itinerary-section {
+  width: 90%;
+  max-width: 1100px;
+  margin: var(--space-16) auto var(--space-12) auto;
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.itinerary-title {
+  font-family: var(--font-primary);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-black);
+  color: var(--accent-gold);
+  margin-bottom: var(--space-8);
+}
+
+/* Tab System */
+.itinerary-tabs {
+  display: inline-flex;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: var(--radius-full);
+  padding: var(--space-1);
+  margin-bottom: var(--space-8);
+  box-shadow: var(--shadow-md);
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  font-family: var(--font-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  z-index: 10;
+  transition: color var(--transition-fast);
+  min-width: 120px;
+  position: relative;
+}
+
+.tab-button.active {
+  color: var(--surface-dark);
+}
+
+.tab-slider {
+  position: absolute;
+  top: var(--space-1);
+  left: var(--space-1);
+  height: calc(100% - 8px);
+  width: 120px;
+  background: var(--accent-gold);
+  border-radius: var(--radius-full);
+  transition: transform 0.15s var(--easing-smooth);
+  z-index: 5;
+}
+
+.itinerary-content-wrapper {
+  position: relative;
+  min-height: 400px;
+}
+
+.itinerary-day {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity var(--transition-slow);
+}
+
+.itinerary-day.hidden {
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ==================
+   COMMITTEE SECTION
+   ================== */
+
+.committee-section-bg {
+  background-color: transparent;
+}
+
+.committee-content-box {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(var(--blur-md));
+  border: var(--border-width-thick) solid var(--accent-gold-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  margin-top: var(--space-6);
+}
+
+/* ==================
+   SECRETARIAT MEMBERS
+   ================== */
+
+.secretariat-members-section {
+  margin-top: var(--space-16);
+  padding-top: var(--space-8);
+}
+
+.peoplecardcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  margin: var(--space-12) auto;
+  max-width: var(--max-width-xl);
+}
+
+/* ==================
+   STUDY GUIDES
+   ================== */
+
+.study-guide-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: var(--border-width) solid var(--accent-gold-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-align: center;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.study-guide-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-gold);
+  border-color: var(--accent-gold);
+}
+
+.study-guide-card h3 {
+  color: var(--accent-gold);
+  margin-bottom: var(--space-3);
+}
+
+.study-guide-card p {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+/* ==================
+   AWARDS SECTION
+   ================== */
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.award-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: var(--border-width-thick) solid var(--accent-gold-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.award-card:hover {
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-gold);
+  transform: scale(1.05);
+}
+
+.award-card h3 {
+  color: var(--accent-gold);
+  margin-bottom: var(--space-2);
+}
+
+/* ==================
+   TRAVEL & ACCOMMODATION
+   ================== */
+
+.travel-info {
+  max-width: var(--max-width-md);
+  margin: 0 auto;
+  text-align: left;
+}
+
+.travel-info h3 {
+  color: var(--accent-gold);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+
+.travel-info p {
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+.travel-info ul {
+  list-style-position: inside;
+  color: var(--text-secondary);
+}
+
+/* ==================
+   DRESS CODE
+   ================== */
+
+.dress-code-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+.dress-code-category {
+  background: rgba(0, 0, 0, 0.5);
+  border: var(--border-width) solid var(--accent-gold-dark);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+
+.dress-code-category h3 {
+  color: var(--accent-gold);
+  margin-bottom: var(--space-4);
+}
+
+.dress-code-category ul {
+  list-style-position: inside;
+  color: var(--text-secondary);
+}
+
+/* ==================
+   MOBILE MENU OVERLAY (Replaces Dropdown Circle)
+   ================== */
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 320px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.98);
+  z-index: var(--z-modal);
+  padding: var(--space-12) var(--space-6);
+  transition: right var(--transition-base);
+  overflow-y: auto;
+}
+
+.menu-overlay.active {
+  right: 0;
+}
+
+.menu-overlay-close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  background: var(--accent-gold);
+  color: var(--surface-dark);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.menu-overlay-close:hover {
+  transform: scale(1.1);
+}
+
+.menu-overlay nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.menu-overlay nav a {
+  color: var(--text-primary);
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  padding: var(--space-3) 0;
+  border-bottom: var(--border-width) solid rgba(255, 215, 0, 0.2);
+  transition: all var(--transition-fast);
+}
+
+.menu-overlay nav a:hover {
+  color: var(--accent-gold);
+  padding-left: var(--space-2);
+}
+
+/* ==================
+   UTILITY CLASSES
+   ================== */
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.glassmorphism {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(var(--blur-md));
+  border: var(--border-width) solid rgba(255, 215, 0, 0.2);
+}
+
+/* ==================
+   PRINT STYLES
+   ================== */
+
+@media print {
+  .navbar,
+  .nav-toggle,
+  .menu-overlay,
+  .scroll-progress,
+  .scroll-indicator {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+}

@@ -1,0 +1,1058 @@
+/* ========================================= */
+/* BASE & FOOTER STYLES (FROM CODE 1) */
+/* ========================================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 15px 40px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.navbar .logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar .links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 19px;
+  transition: color 0.3s;
+}
+
+.navbar .links a:hover {
+  color: #ffcc00;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 27px;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: red;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .navbar .links {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar .links a {
+    margin: 8px;
+    font-size: 14px;
+  }
+}
+
+/* ========================================= */
+/* FONT, BACKGROUND, MAIN TITLE, BUTTON STYLES (FROM CODE 1 & 2) */
+/* ========================================= */
+
+/* Font Definitions (Using local paths from Code 1, assuming structure is correct) */
+@font-face {
+  font-family: "Aprila";
+  src: url("/fonts/Aprila-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aprila";
+  src: url("/fonts/Aprila-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aprila";
+  src: url("/fonts/Aprila-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aprila";
+  src: url("/fonts/Aprila-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aprila";
+  src: url("/fonts/Aprila-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aprila";
+  src: url("/fonts/Aprila-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aprila";
+  src: url("/fonts/Aprila-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Root Variables & Global Body Styles (Merged) */
+.abril-fatface-regular {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --color-maroon: #58181a;
+  --color-gold: #ffd700;
+  --color-bronze: #c4a484;
+  --color-dark-text: #eee;
+  --font-primary: "Aprila", sans-serif;
+  --font-secondary: "Crimson Text", serif;
+  --max-content-width: 1200px;
+  --text-gold-gradient: linear-gradient(
+    180deg,
+    rgb(236, 194, 160) 5%,
+    rgb(209, 191, 159) 20%,
+    rgb(150, 115, 89) 55%,
+    rgb(86, 56, 41) 80%,
+    rgb(58, 40, 24) 75%
+  );
+  /* Define a new gradient for the clock digits to match the image */
+  --countdown-digit-gradient: linear-gradient(
+    to bottom,
+    #944547 20%,
+    #cd9575 80%
+  );
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* FIXED: Use Abril Fatface as the default font for body content */
+  font-family: var(--font-secondary), Arial, sans-serif;
+  color: var(--color-dark-text);
+  background-image: url("WhatsApp Image 2025-11-06 at 20.02.54_fbd1c6bc.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--color-maroon);
+  min-height: 100vh;
+}
+
+.mun-container {
+  padding-top: 5rem;
+}
+
+/* Applying the gradient to titles (These retain the primary Aprila font) */
+.mun-title,
+.section-heading,
+.com-text-content h3 {
+  font-family: var(--font-primary);
+  background-image: var(--text-gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* FIXED: Ensure paragraph text uses Abril Fatface explicitly if needed, but body font should cover it */
+p,
+.peoplecontent,
+.speechmessage h3,
+.speechmessage {
+  font-family: var(--font-secondary), serif !important;
+}
+
+.munlogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.munlogo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 200px;
+}
+
+h2 {
+  color: wheat;
+  text-align: center;
+  font-size: 100px;
+  /* Big heading text uses Aprila */
+  font-family: var(--font-primary), sans-serif;
+  font-weight: 500;
+}
+
+.register_btn {
+  display: inline-block;
+  padding: 30px 30px;
+  font-size: 35px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #f8f7ce;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 9px #c54752;
+  color: #cd9575;
+  /* FIXED: Changed to secondary font */
+  font-family: var(--font-secondary), serif;
+  justify-content: center;
+  align-items: center;
+  text-shadow: rgb(164, 150, 150) 10px 10px 20px;
+}
+
+.register_btn.active,
+.register_btn:active {
+  box-shadow: 0 5px #efd9af;
+  transform: translateY(4px);
+}
+
+/* This retains the animation for the main title (SVCE MUN '26) */
+.popupanimate-charcter {
+  color: #faf9d0;
+  text-align: center;
+  justify-content: center;
+  font-size: 100px;
+  font-family: "Aprila", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    white 0%,
+    #b28241 29%,
+    #f3d199 67%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.popupname,
+.popupanimate-charcter {
+  text-align: center;
+}
+
+.muntitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FIXED: Removed animation from .subheadings */
+.subheadings {
+  color: #faf9d0;
+  text-align: center;
+  justify-content: center;
+  font-size: 50px;
+  font-family: "Aprila", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  /* Using the static start of the gradient */
+  background-image: linear-gradient(to bottom right, #b28241 29%, #f3d199 67%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback */
+  display: inline-block;
+}
+
+/* ========================================= */
+/* SECRETARIAT MEMBERS CARDS STYLES (FROM CODE 1) */
+/* ========================================= */
+
+.peoplecardcontainer {
+  max-width: 1000px;
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.peoplecard {
+  position: relative;
+  margin: 20px 0;
+  width: 600px;
+  height: 500px;
+  background: #fff;
+  transform-style: preserve-3d;
+  transform: perspective(2000px);
+  box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.5),
+    0 20px 20px rgba(0, 0, 0, 0.5);
+  transition: 1s;
+  max-width: 500px;
+  display: flex;
+  flex-direction: row;
+}
+
+.peoplecard:hover {
+  z-index: 10000;
+  transform: perspective(2000px) rotate(-10deg);
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5),
+    0 10px 100px rgba(0, 0, 0, 0.5);
+  background-color: #f1e5ac;
+}
+
+.peoplecard .Box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #b94e48;
+  box-sizing: border-box;
+  position: relative;
+  transform-origin: left;
+  z-index: 1;
+  transition: 1s cubic-bezier(0.15, 1.7, 0.84, 0.58);
+  background: #111;
+}
+
+.peoplecard .Box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.peoplecard:hover .Box {
+  transform: rotateY(-135deg);
+}
+
+.peoplecard .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: -1;
+}
+
+@media (max-width: 600px) {
+  .peoplecard {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .peoplecard .Box {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+/* 🌟 FIXED: Targeted the span only inside the details section of the peoplecard */
+.peoplecard .details span {
+  font-size: 50px;
+  font-weight: 600;
+  /* Retains the red/maroon color for Secretariat names */
+  color: black;
+  text-shadow: #944547 2px 2px 4px;
+  font-family: "Aprila", sans-serif;
+}
+
+.peoplecard .details p {
+  margin: 10px 0 0;
+}
+
+/* Role - Kept Aprila, as it is a major design element */
+.peoplerole {
+  font-size: 36px;
+  font-weight: 900;
+  color: #944547;
+  text-shadow: black 2px 2px 4px;
+  font-family: "Aprila", sans-serif;
+}
+
+/* FIXED: Content uses Abril Fatface */
+.peoplecontent {
+  font-size: 24px;
+  font-weight: 300;
+  color: #333;
+  font-family: var(--font-secondary), serif;
+}
+
+/* ========================================= */
+/* SECRETARY GENERAL MESSAGE STYLES (FROM CODE 1) */
+/* ========================================= */
+.speechcard {
+  flex: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  border: 10px solid #f8d191;
+  background-color: #6c3f44;
+}
+
+/* Title - Kept Aprila */
+.speechtitle {
+  color: grey;
+  font-size: 25px;
+  font-family: "Aprila", sans-serif;
+  font-weight: 700;
+  text-shadow: #f1e5ac 1px 1px 2px;
+}
+
+/* Name - Kept Aprila */
+.speechname {
+  font-size: 40px;
+  font-weight: 800;
+  color: #f1e5ac;
+  font-family: "Aprila", sans-serif;
+  text-shadow: black 2px 2px 4px;
+}
+
+/* FIXED: Message uses Abril Fatface */
+.speechmessage {
+  flex: 1;
+  margin-top: 30px;
+  font-size: 20px;
+  font-family: var(--font-secondary), serif;
+  font-weight: 300;
+  color: #f8d191;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.alignspeech {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+@media (max-width: 768px) {
+  .alignspeech {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .speechcard,
+  .welcome {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+}
+.speechcard img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ========================================= */
+/* ITINERARY STYLES (FROM CODE 1) */
+/* ========================================= */
+.itinerary-section {
+  width: 90%;
+  max-width: 1100px;
+  margin: 200px auto 100px auto;
+  padding: 20px;
+  text-align: center;
+  color: var(--color-dark-text);
+}
+
+.itinerary-title {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  background-image: linear-gradient(135deg, #ffd700, #c4a484);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- TAB STYLING (Sliding Button) --- */
+.itinerary-tabs {
+  display: inline-flex;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50px;
+  padding: 5px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--color-dark-text);
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.3s ease;
+  min-width: 120px;
+  /* FIXED: Tab button text uses Abril Fatface */
+  font-family: var(--font-secondary), serif;
+}
+
+.tab-button.active {
+  color: #000;
+}
+
+.tab-slider {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: calc(100% - 10px);
+  width: 120px;
+  background: linear-gradient(135deg, #ffd700, #c4a484);
+  border-radius: 50px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 5;
+}
+
+/* --- ITINERARY CONTENT & ANIMATION --- */
+.itinerary-content-wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 550px;
+  /* FIXED: Ensures content wrapper uses Abril Fatface default */
+  font-family: var(--font-secondary), serif;
+}
+
+.itinerary-day {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.itinerary-day.hidden {
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* 🌟 GRID SETUP: Left Content | Line | Right Content (3 COLUMNS) */
+.itinerary-timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 4px 1fr;
+  gap: 0;
+  padding: 20px 0;
+}
+
+/* 🌟 CENTRAL VERTICAL LINE (FIXED & CENTERED) */
+.itinerary-timeline::before {
+  content: "";
+  background: #ffd700;
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-2px);
+  z-index: 0;
+}
+
+/* 🌟 TIMELINE ITEM: Use contents to allow children to join the grid */
+.timeline-item {
+  display: contents;
+}
+
+/* --- Content Positioning --- */
+/* Default/Left items (no .right class): Go in column 1 */
+.timeline-item:not(.right) .time,
+.timeline-item:not(.right) .event {
+  grid-column: 1 / 2;
+  text-align: right;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-self: center;
+}
+
+/* Right items (.right class): Go in column 3 */
+.timeline-item.right .event {
+  grid-column: 3 / 4;
+  text-align: left;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-self: center;
+}
+
+/* 🌟 DOT ALIGNMENT (Centered on the Vertical Line) */
+.timeline-item::before {
+  content: "";
+  grid-column: 2 / 3;
+  width: 16px;
+  height: 16px;
+  background-color: #ffd700;
+  border-radius: 50%;
+  position: relative;
+  justify-self: center;
+  align-self: center;
+  z-index: 2;
+  margin: 10px 0;
+  border-bottom: 2px solid #ffd700;
+}
+
+/* 🌟 REMOVE DIVIDER FROM LAST ITEM */
+.itinerary-timeline .timeline-item:last-of-type::before {
+  border-bottom: none;
+}
+
+/* Adjusting font styles */
+.timeline-item .time {
+  font-size: 1.3em;
+  font-weight: bold;
+  background-image: linear-gradient(135deg, #ffd700, #c4a484);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  /* FIXED: Time text uses Abril Fatface */
+  font-family: var(--font-secondary), serif;
+}
+
+/* FIXED: Event text uses Abril Fatface */
+.timeline-item .event {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: #fff;
+  font-family: var(--font-secondary), serif;
+}
+
+/* 1. RIGHT SIDE TIME TEXT: Positioning and Gradient Color */
+.timeline-item.right .time {
+  grid-column: 3 / 4;
+  text-align: left;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 0;
+  align-self: center;
+
+  font-size: 1.3em;
+  font-weight: bold;
+  background-image: linear-gradient(135deg, #a19132, #c4a484);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  /* FIXED: Time text uses Abril Fatface */
+  font-family: var(--font-secondary), serif;
+}
+
+/* ========================================= */
+/* COUNTDOWN CLOCK STYLES (FROM CODE 1) */
+/* ========================================= */
+h1 {
+  margin-bottom: 60px;
+  text-align: center;
+  font: 300 2.25em "Lato";
+  text-transform: uppercase;
+}
+h1 strong {
+  font-weight: 400;
+  color: linear-gradient(135deg, #a19132, #c4a484);
+}
+.wrap {
+  position: relative;
+  margin: 50px auto;
+  height: 310px;
+}
+.countdown {
+  width: 1040px;
+  margin: 0 auto;
+}
+.countdown .bloc-time {
+  float: left;
+  margin-right: 40px;
+  text-align: center;
+}
+.countdown .bloc-time:last-child {
+  margin-right: 0;
+}
+
+/* Countdown Title - Kept Aprila */
+.countdown .count-title {
+  display: block;
+  margin-bottom: 15px;
+  font: normal 0.94em "Aprila";
+  color: #f0eded;
+  text-transform: uppercase;
+}
+
+.countdown .figure {
+  position: relative;
+  float: left;
+  height: 110px;
+  width: 100px;
+  margin-right: 10px;
+  position: relative;
+  transform-style: preserve-3d;
+  background-color: rgba(17, 16, 16, 0.73);
+  border-radius: 8px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2),
+    inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+.countdown .figure:last-child {
+  margin-right: 0;
+}
+
+/* --- DIGIT GRADIENT FIXES --- */
+.countdown .figure > span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* FIXED: Use Abril Fatface for digits */
+  font: normal 5.94em/107px var(--font-secondary);
+  font-weight: 700;
+
+  /* FIXED: Use the rich gold/maroon gradient variable */
+  background-image: var(--countdown-digit-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.countdown .figure .bottom-back span,
+.countdown .figure .top-back span {
+  font: inherit;
+  font-weight: inherit;
+  /* FIXED: Use the rich gold/maroon gradient on flip panels */
+  background-image: var(--countdown-digit-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.countdown .figure .top {
+  z-index: 3;
+  background-color: rgba(20, 15, 15, 0.827);
+  transform-origin: 50% 100%;
+  -webkit-transform-origin: 50% 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  -webkit-transform: perspective(200px);
+  -moz-transform: perspective(200px);
+  -ms-transform: perspective(200px);
+  -o-transform: perspective(200px);
+  transform: perspective(200px);
+}
+
+.countdown .figure .bottom-back {
+  z-index: 2;
+  top: 0;
+  height: 50%;
+  overflow: hidden;
+  background-color: rgba(20, 15, 15, 0.827);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.countdown .figure .top-back {
+  z-index: 4;
+  bottom: 0;
+  background-color: rgba(20, 15, 15, 0.827);
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transform: perspective(200px) rotateX(180deg);
+  -moz-transform: perspective(200px) rotateX(180deg);
+  -ms-transform: perspective(200px) rotateX(180deg);
+  -o-transform: perspective(200px) rotateX(180deg);
+  transform: perspective(200px) rotateX(180deg);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* --- REMAINING BASE CLOCK STYLES --- */
+.countdown .figure .top:after,
+.countdown .figure .bottom-back:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.countdown .figure .bottom {
+  z-index: 1;
+}
+
+.countdown .figure .bottom:before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.countdown .figure .bottom-back span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.countdown .figure .top,
+.countdown .figure .top-back {
+  height: 50%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.countdown .figure .top-back span {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* ========================================= */
+/* COMMITTEES SECTION STYLES (FROM CODE 2) */
+/* ========================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fadeInUp 0.5s ease-out both;
+}
+.committee-section-bg {
+  background-color: transparent;
+}
+
+/* Committee Text Gradient */
+.committee-text-gradient {
+  background-image: linear-gradient(to bottom right, #b28241 29%, #f3d199 67%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.committee-button-active {
+  background-image: linear-gradient(to bottom right, #daa520, #ffd700);
+  box-shadow: 0 0 40px rgba(128, 0, 0, 0.5);
+  border-radius: 9999px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: rgba(128, 0, 0, 0.5);
+}
+.committee-button-inactive {
+  background-image: linear-gradient(to bottom right, #800000, #5c0000);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.committee-button-inactive:hover {
+  background-image: linear-gradient(to bottom right, #daa520, #ffd700);
+}
+.committee-content-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-color: rgba(128, 0, 0, 0.6);
+}
+.committee-content-box .abril-fatface-regular {
+  letter-spacing: 1px;
+}
+.triangle-down {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #ffd700;
+}
+/* 🌟 FIXED: Changed to semi-transparent wheat color */
+.bg-slate-950\/50 {
+  background-color: rgba(245, 222, 179, 0.4);
+}
+.bg-slate-900\/70 {
+  background-color: rgba(245, 222, 179, 0.5);
+}
+
+.committee-content-box .text-amber-400,
+.committee-content-box .text-amber-200\/80,
+.committee-content-box .text-amber-300 {
+  background-image: linear-gradient(to bottom right, #b28241 29%, #f3d199 67%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.member-image-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #5c0000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.committee-content-box .border-amber-900\/20 {
+  border-color: rgba(128, 0, 0, 0.2);
+}
+.committee-content-box .border-amber-900\/10 {
+  border-color: rgba(128, 0, 0, 0.1);
+}
+.committee-content-box .hover\:border-amber-700\/30:hover {
+  border-color: rgba(128, 0, 0, 0.5);
+}
+.committee-content-box .via-amber-600 {
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    #800000,
+    transparent
+  );
+}
+/* ========================================= */
+/* RESPONSIVE ENHANCEMENTS */
+/* ========================================= */
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 70px;
+  }
+  .popupanimate-charcter {
+    font-size: 70px;
+  }
+  .subheadings {
+    font-size: 40px;
+  }
+  .peoplecard {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+  .navbar .links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .navbar .links a {
+    font-size: 16px;
+    margin: 8px;
+  }
+  .popupanimate-charcter {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 50px;
+  }
+  .register_btn {
+    font-size: 24px;
+    padding: 20px;
+  }
+  .speechmessage {
+    font-size: 18px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .links a {
+    font-size: 14px;
+  }
+  .popupanimate-charcter {
+    font-size: 40px;
+  }
+  .subheadings {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  .register_btn {
+    font-size: 18px;
+    padding: 15px 20px;
+  }
+  .speechmessage {
+    font-size: 16px;
+  }
+}

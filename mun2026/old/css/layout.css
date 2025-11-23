@@ -1,0 +1,373 @@
+/* ========================================
+   LAYOUT
+   SVCEMUN'26 - Structure & Spacing
+   ======================================== */
+
+/* ==================
+   BODY & MAIN
+   ================== */
+
+body {
+  background-image: url("../images/backgrounds/mun-background.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--primary-maroon);
+  position: relative;
+}
+
+/* Dark overlay for better text readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  pointer-events: none;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==================
+   CONTAINER
+   ================== */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width-xl);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-sm {
+  max-width: var(--max-width-sm);
+}
+
+.container-md {
+  max-width: var(--max-width-md);
+}
+
+.container-lg {
+  max-width: var(--max-width-lg);
+}
+
+/* ==================
+   SECTIONS
+   ================== */
+
+section {
+  padding: var(--section-padding-y) var(--container-padding);
+  position: relative;
+}
+
+/* Alternating section backgrounds */
+section:nth-child(even) {
+  background-color: var(--primary-maroon-tint);
+}
+
+/* ==================
+   GRID SYSTEM
+   ================== */
+
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Responsive grid */
+@media (max-width: 768px) {
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ==================
+   FLEXBOX UTILITIES
+   ================== */
+
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+
+/* ==================
+   SPACING UTILITIES
+   ================== */
+
+/* Margin */
+.m-auto { margin: auto; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.my-auto { margin-top: auto; margin-bottom: auto; }
+
+.mt-1 { margin-top: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-3 { margin-top: var(--space-3); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-8 { margin-top: var(--space-8); }
+.mt-12 { margin-top: var(--space-12); }
+
+.mb-1 { margin-bottom: var(--space-1); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-8 { margin-bottom: var(--space-8); }
+.mb-12 { margin-bottom: var(--space-12); }
+
+/* Padding */
+.p-1 { padding: var(--space-1); }
+.p-2 { padding: var(--space-2); }
+.p-3 { padding: var(--space-3); }
+.p-4 { padding: var(--space-4); }
+.p-6 { padding: var(--space-6); }
+.p-8 { padding: var(--space-8); }
+
+/* ==================
+   WIDTH & HEIGHT
+   ================== */
+
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.min-h-screen { min-height: 100vh; }
+.max-w-full { max-width: 100%; }
+
+/* ==================
+   POSITION
+   ================== */
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+
+/* ==================
+   RESPONSIVE SPACING
+   ================== */
+
+@media (max-width: 768px) {
+  section {
+    padding: var(--section-padding-y-mobile) var(--container-padding);
+  }
+}
+
+/* ==================
+   HERO SECTION
+   ================== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12) var(--container-padding);
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(88, 24, 26, 0.6));
+  z-index: -1;
+}
+
+/* ==================
+   CONTENT WRAPPERS
+   ================== */
+
+.content-wrapper {
+  max-width: var(--max-width-lg);
+  margin: 0 auto;
+}
+
+.narrow-content {
+  max-width: var(--max-width-md);
+  margin: 0 auto;
+}
+
+/* ==================
+   DIVIDERS
+   ================== */
+
+hr {
+  border: none;
+  height: var(--border-width);
+  background: var(--accent-gold-dark);
+  margin: var(--space-8) 0;
+  opacity: 0.3;
+}
+
+.divider-gold {
+  border: none;
+  height: var(--border-width-thick);
+  background: linear-gradient(to right, transparent, var(--accent-gold), transparent);
+  margin: var(--space-6) 0;
+}
+
+/* ==================
+   CARDS
+   ================== */
+
+.card {
+  background: rgba(0, 0, 0, 0.6);
+  border: var(--border-width) solid var(--accent-gold-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-4px);
+}
+
+.card-simple {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(var(--blur-md));
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+/* ==================
+   ASPECT RATIOS
+   ================== */
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-portrait {
+  aspect-ratio: 3 / 4;
+}
+
+/* ==================
+   OVERFLOW
+   ================== */
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
