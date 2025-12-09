@@ -150,18 +150,12 @@
       }
 
       /* vignette */
-      #hero::after {
-        content: "";
-        position: absolute;
-        inset: -40px;
-        background: radial-gradient(
-          circle,
-          transparent 35%,
-          rgba(0, 0, 0, 0.9) 85%
-        );
-        pointer-events: none;
-        z-index: -1;
-      }
+      #hero h1::after {
+  inset: -5px -20px !important;
+  opacity: 0.2 !important;
+  filter: blur(4px) !important;
+}
+
 
       /* rotating maroon aura behind content */
       .hero-aura {
@@ -1353,3 +1347,4 @@
     </script>
   </body>
 </html>
+
