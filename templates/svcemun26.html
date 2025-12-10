@@ -151,11 +151,10 @@
 
       /* vignette */
       #hero h1::after {
-  inset: -5px -20px !important;
-  opacity: 0.2 !important;
-  filter: blur(4px) !important;
-}
-
+        inset: -5px -20px !important;
+        opacity: 0.2 !important;
+        filter: blur(4px) !important;
+      }
 
       /* rotating maroon aura behind content */
       .hero-aura {
@@ -999,6 +998,57 @@
           overflow: hidden !important;
         }
       }
+      /* MOBILE FIX FOR COMMITTEE ARROWS */
+      @media (max-width: 768px) {
+        .committee-arrow {
+          width: 45px;
+          height: 70px;
+          font-size: 2rem;
+
+          /* Move arrows vertically OUTSIDE text area */
+          top: 50%;
+          transform: translateY(-50%);
+
+          /* Transparent enough so nothing is unreadable */
+          background: rgba(212, 175, 55, 0.15);
+          backdrop-filter: blur(4px);
+        }
+
+        .left-arrow {
+          left: -5px; /* Slightly outside card */
+        }
+
+        .right-arrow {
+          right: -5px; /* Slightly outside card */
+        }
+
+        /* Increase space inside card so nothing gets squished */
+        .committee-card-container {
+          width: 90%;
+          padding: 30px 20px;
+        }
+
+        /* Reduce logo size */
+        .committee-logo {
+          width: 70%;
+          margin: 0 auto 20px;
+          display: block;
+        }
+
+        /* Stack layout vertically */
+        .committee-card {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .chairs-section h4 {
+          text-align: center;
+        }
+
+        .chair-list {
+          justify-content: center;
+        }
+      }
     </style>
   </head>
   <script>
@@ -1043,6 +1093,7 @@
       {
         name: "IPC",
         logo: "../static/ipc 2.png",
+        agenda: "<b>Record and document the proceedings of the conference.</b>",
         description:
           "The International Press Corps (IPC) serves as the watchdog of diplomacy, documenting, analyzing, and questioning every development across committees. Journalists craft compelling reports, interviews, and breaking stories that shape public perception and influence debate. The committee demands sharp observation, unbiased reporting, and creative storytelling under tight deadlines. IPC empowers participants to amplify truth, hold delegates accountable, and bring the conference narrative to life.",
       },
@@ -1244,7 +1295,7 @@
     <!-- COUNTDOWN + STARS / COMETS / SPARKLES -->
     <script>
       // ===== COUNTDOWN WITH FLIP =====
-      const targetDate = new Date("2026-02-10T09:00:00").getTime();
+      const targetDate = new Date("2026-01-30T09:30:00").getTime();
       const units = ["days", "hours", "minutes", "seconds"];
 
       function updateCountdown() {
@@ -1347,4 +1398,3 @@
     </script>
   </body>
 </html>
-
