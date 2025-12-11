@@ -149,13 +149,6 @@
         z-index: -1;
       }
 
-      /* vignette */
-      #hero h1::after {
-        inset: -5px -20px !important;
-        opacity: 0.2 !important;
-        filter: blur(4px) !important;
-      }
-
       /* rotating maroon aura behind content */
       .hero-aura {
         position: absolute;
@@ -227,23 +220,9 @@
       }
 
       #hero h1::after {
-        content: "";
-        position: absolute;
-        inset: -18px -160px;
-        border-radius: 999px;
-        background: radial-gradient(
-            circle at 10% 0%,
-            rgba(255, 255, 255, 0.2),
-            transparent 55%
-          ),
-          radial-gradient(
-            circle at 80% 120%,
-            rgba(212, 175, 55, 0.35),
-            transparent 60%
-          );
-        opacity: 0.5;
-        filter: blur(10px);
-        z-index: -1;
+        inset: -5px -20px !important;
+        opacity: 0.2 !important;
+        filter: blur(4px) !important;
       }
 
       @keyframes titleGlow {
@@ -534,6 +513,67 @@
         }
       }
 
+      /* ================= FIREWORKS + CONFETTI (CSS) ================= */
+
+      .fw-particle {
+        position: fixed;
+        width: 6px;
+        height: 6px;
+        background: radial-gradient(circle, #fff8d6, #d4af37);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 999999;
+        box-shadow: 0 0 12px rgba(212, 175, 55, 0.9);
+      }
+
+      .fw-flash {
+        position: fixed;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 240, 180, 0.9),
+          rgba(212, 175, 55, 0.55),
+          rgba(0, 0, 0, 0)
+        );
+        transform: translate(-50%, -50%);
+        opacity: 0.8;
+        pointer-events: none;
+        z-index: 999998;
+        animation: flashFade 0.5s ease-out forwards;
+      }
+
+      @keyframes flashFade {
+        0% {
+          transform: translate(-50%, -50%) scale(0.4);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(1.6);
+          opacity: 0;
+        }
+      }
+
+      .confetti {
+        position: fixed;
+        opacity: 0.9;
+        z-index: 9999;
+        border-radius: 2px;
+        mix-blend-mode: screen;
+      }
+
+      @keyframes confettiFall {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(120vh) rotate(720deg);
+          opacity: 0.8;
+        }
+      }
+
       /* ================= FOOTER (STRUCTURE UNCHANGED) ================= */
       footer {
         background: radial-gradient(
@@ -586,6 +626,7 @@
           letter-spacing: 0.08em;
         }
       }
+
       /* ====================== COMMITTEE SECTION ====================== */
 
       .committee-wrapper {
@@ -729,6 +770,7 @@
           transform: translateY(0px);
         }
       }
+
       /* MAIN TITLE OUTSIDE CARD */
       .committee-main-title {
         text-align: center;
@@ -912,6 +954,7 @@
         color: rgba(255, 240, 210, 0.9);
         letter-spacing: 0.12em;
       }
+
       /* ===================== MOBILE PATCH FIX ===================== */
 
       @media (max-width: 768px) {
@@ -997,45 +1040,37 @@
         .committee-left {
           overflow: hidden !important;
         }
-      }
-      /* MOBILE FIX FOR COMMITTEE ARROWS */
-      @media (max-width: 768px) {
+
+        /* MOBILE FIX FOR COMMITTEE ARROWS */
         .committee-arrow {
           width: 45px;
           height: 70px;
           font-size: 2rem;
-
-          /* Move arrows vertically OUTSIDE text area */
           top: 50%;
           transform: translateY(-50%);
-
-          /* Transparent enough so nothing is unreadable */
           background: rgba(212, 175, 55, 0.15);
           backdrop-filter: blur(4px);
         }
 
         .left-arrow {
-          left: -5px; /* Slightly outside card */
+          left: -5px;
         }
 
         .right-arrow {
-          right: -5px; /* Slightly outside card */
+          right: -5px;
         }
 
-        /* Increase space inside card so nothing gets squished */
         .committee-card-container {
           width: 90%;
           padding: 30px 20px;
         }
 
-        /* Reduce logo size */
         .committee-logo {
           width: 70%;
           margin: 0 auto 20px;
           display: block;
         }
 
-        /* Stack layout vertically */
         .committee-card {
           flex-direction: column;
           text-align: center;
@@ -1051,108 +1086,6 @@
       }
     </style>
   </head>
-  <script>
-    const committees = [
-      {
-        name: "TNLA",
-        logo: "../static/tnla.png",
-        agenda:
-          "<b>Analysing the Rural and Urban Infrastructure projects in Tamilnadu.</b>",
-        description:
-          "The Tamil Nadu Legislative Assembly (TNLA) stands as a cornerstone of democratic governance, shaping the socio-economic and political landscape of the state. It serves as a dynamic forum for debating pressing regional issues, from education and welfare to industrial growth and social justice. Delegates will navigate the complexities of federalism, policy implementation, and political accountability. TNLA challenges participants to craft impactful, people-centric solutions rooted in realistic legislative frameworks.",
-      },
-      {
-        name: "AIPPM",
-        logo: "../static/aippm 2.png",
-        agenda:
-          "<b>Deliberation upon the socio-economic and legal implications of the nationwide caste based census.</b>",
-        description:
-          "The All India Political Parties Meet (AIPPM) serves as a high-level platform for dialogue among India’s major political forces, fostering cooperation beyond party lines. It allows delegates to engage in vigorous debate on national priorities, ranging from economic reforms to internal security and social welfare. The committee emphasizes negotiation, coalition-building, and consensus-driven policymaking. AIPPM challenges participants to balance ideology with pragmatism to shape India’s political future.",
-      },
-      {
-        name: "R.E.D.L.I.N.E",
-        logo: "../static/redline.png",
-        agenda: "<b>Preserving order in the meridian strip.</b>",
-        description:
-          "R.E.D.L.I.N.E operates as an elite crisis-response body tasked with confronting rapidly escalating global threats that demand immediate action. Delegates navigate high-pressure scenarios involving intelligence failures, geopolitical conflicts, and covert operations. The committee prioritizes strategic thinking, rapid decision-making, and coordinated multi-agency responses. R.E.D.L.I.N.E challenges participants to act with precision, resilience, and foresight as they attempt to prevent catastrophic outcomes.",
-      },
-      {
-        name: "SOCHUM",
-        logo: "../static/sochum.png",
-        agenda: "<b>Natural Law, Religious Law, and Positive Law.</b>",
-        description:
-          "The Social, Humanitarian and Cultural Committee (SOCHUM) focuses on safeguarding human rights, advancing social development, and addressing humanitarian challenges across the globe. Delegates debate issues such as discrimination, cultural preservation, refugee protection, and social equity. The committee encourages empathy-driven diplomacy, evidence-based policymaking, and multilateral cooperation. SOCHUM empowers participants to craft inclusive solutions that uphold dignity, justice, and global well-being.",
-      },
-      {
-        name: "UNGA",
-        logo: "../static/UNGA.png",
-        agenda: "<b>Meeting on the Grand Ethiopian Renaissance Dam</b>",
-        description:
-          "The United Nations General Assembly (UNGA) stands as the primary deliberative body of the UN, bringing together all member states to address global peace, security, and development. Delegates engage with diverse international challenges ranging from climate action and global health to disarmament and sustainable growth. The committee emphasizes diplomacy, consensus-building, and inclusive multilateral dialogue. UNGA empowers participants to shape comprehensive, globally impactful solutions through collective action.",
-      },
-      {
-        name: "IPC",
-        logo: "../static/ipc 2.png",
-        agenda: "<b>Record and document the proceedings of the conference.</b>",
-        description:
-          "The International Press Corps (IPC) serves as the watchdog of diplomacy, documenting, analyzing, and questioning every development across committees. Journalists craft compelling reports, interviews, and breaking stories that shape public perception and influence debate. The committee demands sharp observation, unbiased reporting, and creative storytelling under tight deadlines. IPC empowers participants to amplify truth, hold delegates accountable, and bring the conference narrative to life.",
-      },
-    ];
-
-    let index = 0;
-
-    function loadCommittee(i) {
-      const committee = committees[i];
-
-      document.getElementById("committee-name").textContent = committee.name;
-      document.getElementById("committee-logo").src = committee.logo;
-      document.getElementById(
-        "committee-agenda"
-      ).innerHTML = `<strong>Agenda:</strong><br>${committee.agenda}`;
-      document.getElementById("committee-description").textContent =
-        committee.description;
-
-      // EXECUTIVE BOARD
-      const ebList = document.getElementById("eb-list");
-      ebList.innerHTML = "";
-
-      if (committee.executiveBoard) {
-        committee.executiveBoard.forEach((member) => {
-          ebList.innerHTML += `
-        <div class="eb-card">
-          <img src="${member.img}">
-          <p class="eb-name">${member.name}</p>
-          <p class="eb-role">${member.role}</p>
-        </div>
-      `;
-        });
-      }
-    }
-
-    function nextCommittee() {
-      index = (index + 1) % committees.length;
-      animateCard();
-      setTimeout(() => loadCommittee(index), 200);
-    }
-
-    function prevCommittee() {
-      index = (index - 1 + committees.length) % committees.length;
-      animateCard();
-      setTimeout(() => loadCommittee(index), 200);
-    }
-
-    function animateCard() {
-      const card = document.getElementById("committee-card");
-      card.style.opacity = 0;
-      card.style.transform = "translateY(20px)";
-      setTimeout(() => {
-        card.style.opacity = 1;
-        card.style.transform = "translateY(0)";
-      }, 200);
-    }
-
-    loadCommittee(index);
-  </script>
 
   <body class="antialiased">
     <!-- NAVBAR (UNCHANGED STRUCTURE) -->
@@ -1179,15 +1112,12 @@
         background-position: center;
       "
     >
-      <!-- maroon aura behind everything -->
       <div class="hero-aura"></div>
 
-      <!-- LOGO -->
       <div class="hero-logo">
         <img src="../static/munsoc logo 2.png" alt="MUNSOC Logo" />
       </div>
 
-      <!-- TITLE -->
       <h1>SVCE MUN '26</h1>
 
       <!-- COUNTDOWN -->
@@ -1213,7 +1143,6 @@
         </div>
       </div>
 
-      <!-- REGISTER BUTTON -->
       <a
         href="https://forms.gle/4v7ws9MK4pBLc9HLA"
         class="register-btn"
@@ -1222,7 +1151,6 @@
         Register Now
       </a>
 
-      <!-- TAGLINE -->
       <p class="mt-10 italic">January 30th & 31st 2026.</p>
       <p class="mt-10 italic">Aspire. Act. Achieve.</p>
     </section>
@@ -1232,12 +1160,10 @@
     <h2 class="committee-main-title" data-aos="fade-up">COMMITTEES</h2>
 
     <div class="committee-slider-wrapper">
-      <!-- LEFT ARROW -->
       <button class="committee-arrow left-arrow" onclick="prevCommittee()">
         &#10094;
       </button>
 
-      <!-- CARD CONTAINER -->
       <div class="committee-card-container" id="committee-card">
         <h2 class="committee-title" id="committee-name">UNGA</h2>
 
@@ -1246,7 +1172,7 @@
             <img
               id="committee-logo"
               src="../static/UNGA.png"
-              alt="harini?"
+              alt="Committee logo"
               class="committee-logo"
             />
           </div>
@@ -1260,19 +1186,12 @@
             <p class="committee-description" id="committee-description">
               The United Nations General Assembly (UNGA) stands as the primary
               deliberative body of the UN, bringing together all member states
-              to address global peace, security, and development. Delegates
-              engage with diverse international challenges ranging from climate
-              action and global health to disarmament and sustainable growth.
-              The committee emphasizes diplomacy, consensus-building, and
-              inclusive multilateral dialogue. UNGA empowers participants to
-              shape comprehensive, globally impactful solutions through
-              collective action.
+              to address global peace, security, and development...
             </p>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT ARROW -->
       <button class="committee-arrow right-arrow" onclick="nextCommittee()">
         &#10095;
       </button>
@@ -1288,21 +1207,245 @@
 
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
     <script>
       AOS.init();
-    </script>
 
-    <!-- COUNTDOWN + STARS / COMETS / SPARKLES -->
-    <script>
-      // ===== COUNTDOWN WITH FLIP =====
-      const targetDate = new Date("2026-01-30T09:30:00").getTime();
+      /* ---------------------- COMMITTEE SLIDER DATA ---------------------- */
+      const committees = [
+        {
+          name: "TNLA",
+          logo: "../static/tnla.png",
+          agenda:
+            "<b>Analysing the Rural and Urban Infrastructure projects in Tamilnadu.</b>",
+          description:
+            "The Tamil Nadu Legislative Assembly (TNLA) stands as a cornerstone of democratic governance, shaping the socio-economic and political landscape of the state. It serves as a dynamic forum for debating pressing regional issues, from education and welfare to industrial growth and social justice. Delegates will navigate the complexities of federalism, policy implementation, and political accountability. TNLA challenges participants to craft impactful, people-centric solutions rooted in realistic legislative frameworks.",
+        },
+        {
+          name: "AIPPM",
+          logo: "../static/aippm 2.png",
+          agenda:
+            "<b>Deliberation upon the socio-economic and legal implications of the nationwide caste based census.</b>",
+          description:
+            "The All India Political Parties Meet (AIPPM) serves as a high-level platform for dialogue among India’s major political forces, fostering cooperation beyond party lines. It allows delegates to engage in vigorous debate on national priorities, ranging from economic reforms to internal security and social welfare. The committee emphasizes negotiation, coalition-building, and consensus-driven policymaking. AIPPM challenges participants to balance ideology with pragmatism to shape India’s political future.",
+        },
+        {
+          name: "R.E.D.L.I.N.E",
+          logo: "../static/redline.png",
+          agenda: "<b>Preserving order in the meridian strip.</b>",
+          description:
+            "R.E.D.L.I.N.E operates as an elite crisis-response body tasked with confronting rapidly escalating global threats that demand immediate action. Delegates navigate high-pressure scenarios involving intelligence failures, geopolitical conflicts, and covert operations. The committee prioritizes strategic thinking, rapid decision-making, and coordinated multi-agency responses. R.E.D.L.I.N.E challenges participants to act with precision, resilience, and foresight as they attempt to prevent catastrophic outcomes.",
+        },
+        {
+          name: "SOCHUM",
+          logo: "../static/sochum.png",
+          agenda: "<b>Natural Law, Religious Law, and Positive Law.</b>",
+          description:
+            "The Social, Humanitarian and Cultural Committee (SOCHUM) focuses on safeguarding human rights, advancing social development, and addressing humanitarian challenges across the globe. Delegates debate issues such as discrimination, cultural preservation, refugee protection, and social equity. The committee encourages empathy-driven diplomacy, evidence-based policymaking, and multilateral cooperation. SOCHUM empowers participants to craft inclusive solutions that uphold dignity, justice, and global well-being.",
+        },
+        {
+          name: "UNGA",
+          logo: "../static/UNGA.png",
+          agenda: "<b>Meeting on the Grand Ethiopian Renaissance Dam.</b>",
+          description:
+            "The United Nations General Assembly (UNGA) stands as the primary deliberative body of the UN, bringing together all member states to address global peace, security, and development. Delegates engage with diverse international challenges ranging from climate action and global health to disarmament and sustainable growth. The committee emphasizes diplomacy, consensus-building, and inclusive multilateral dialogue. UNGA empowers participants to shape comprehensive, globally impactful solutions through collective action.",
+        },
+        {
+          name: "IPC",
+          logo: "../static/ipc 2.png",
+          agenda:
+            "<b>Record and document the proceedings of the conference.</b>",
+          description:
+            "The International Press Corps (IPC) serves as the watchdog of diplomacy, documenting, analyzing, and questioning every development across committees. Journalists craft compelling reports, interviews, and breaking stories that shape public perception and influence debate. The committee demands sharp observation, unbiased reporting, and creative storytelling under tight deadlines. IPC empowers participants to amplify truth, hold delegates accountable, and bring the conference narrative to life.",
+        },
+      ];
+
+      let committeeIndex = 0;
+
+      function loadCommittee(i) {
+        const committee = committees[i];
+        document.getElementById("committee-name").textContent = committee.name;
+        document.getElementById("committee-logo").src = committee.logo;
+        document.getElementById(
+          "committee-agenda"
+        ).innerHTML = `<strong>Agenda:</strong><br>${committee.agenda}`;
+        document.getElementById("committee-description").textContent =
+          committee.description;
+
+        // If you add EB someday, this won't break:
+        const ebList = document.getElementById("eb-list");
+        if (ebList && committee.executiveBoard) {
+          ebList.innerHTML = "";
+          committee.executiveBoard.forEach((member) => {
+            ebList.innerHTML += `
+              <div class="eb-card">
+                <img src="${member.img}" />
+                <p class="eb-name">${member.name}</p>
+                <p class="eb-role">${member.role}</p>
+              </div>
+            `;
+          });
+        }
+      }
+
+      function animateCard() {
+        const card = document.getElementById("committee-card");
+        card.style.opacity = 0;
+        card.style.transform = "translateY(20px)";
+        setTimeout(() => {
+          card.style.opacity = 1;
+          card.style.transform = "translateY(0)";
+        }, 200);
+      }
+
+      function nextCommittee() {
+        committeeIndex = (committeeIndex + 1) % committees.length;
+        animateCard();
+        setTimeout(() => loadCommittee(committeeIndex), 200);
+      }
+
+      function prevCommittee() {
+        committeeIndex =
+          (committeeIndex - 1 + committees.length) % committees.length;
+        animateCard();
+        setTimeout(() => loadCommittee(committeeIndex), 200);
+      }
+
+      loadCommittee(committeeIndex);
+
+      /* ---------------------- FIREWORKS + CONFETTI ---------------------- */
+
+      let celebrationDone = false;
+
+      function triggerCelebration() {
+        if (celebrationDone) return;
+        celebrationDone = true;
+        launchFireworks();
+        launchConfetti();
+      }
+
+      function launchFireworks() {
+        for (let i = 0; i < 12; i++) {
+          setTimeout(() => {
+            createFireworkBurst();
+          }, i * 500);
+        }
+      }
+
+      function createFireworkBurst() {
+        const burstX = Math.random() * window.innerWidth;
+        const burstY = Math.random() * window.innerHeight * 0.55 + 80;
+        const particleCount = 28 + Math.floor(Math.random() * 20);
+
+        for (let i = 0; i < particleCount; i++) {
+          createFireworkParticle(burstX, burstY);
+        }
+
+        createFireworkFlash(burstX, burstY);
+      }
+
+      function createFireworkParticle(x, y) {
+        const p = document.createElement("div");
+        p.className = "fw-particle";
+        document.body.appendChild(p);
+
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 3 + Math.random() * 4;
+
+        let vx = Math.cos(angle) * speed;
+        let vy = Math.sin(angle) * speed;
+        let px = x;
+        let py = y;
+        let alpha = 1;
+
+        function animate() {
+          px += vx;
+          py += vy;
+          vy += 0.04; // gravity
+          alpha -= 0.015;
+
+          p.style.left = px + "px";
+          p.style.top = py + "px";
+          p.style.opacity = alpha;
+
+          if (alpha > 0) {
+            requestAnimationFrame(animate);
+          } else {
+            p.remove();
+          }
+        }
+
+        animate();
+      }
+
+      function createFireworkFlash(x, y) {
+        const flash = document.createElement("div");
+        flash.className = "fw-flash";
+        flash.style.left = x + "px";
+        flash.style.top = y + "px";
+        document.body.appendChild(flash);
+        setTimeout(() => flash.remove(), 500);
+      }
+
+      function launchConfetti() {
+        for (let i = 0; i < 120; i++) {
+          setTimeout(() => createConfettiPiece(), i * 10);
+        }
+      }
+
+      function createConfettiPiece() {
+        const piece = document.createElement("div");
+        piece.className = "confetti";
+        document.body.appendChild(piece);
+
+        const colors = ["#d4af37", "#ffea95", "#c89b2d"];
+        piece.style.background =
+          colors[Math.floor(Math.random() * colors.length)];
+        piece.style.left = Math.random() * window.innerWidth + "px";
+        piece.style.top = "-20px";
+        piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+        piece.style.width = Math.random() * 8 + 4 + "px";
+        piece.style.height = Math.random() * 18 + 10 + "px";
+
+        const fallTime = Math.random() * 2 + 3;
+        piece.style.animation = `confettiFall ${fallTime}s linear forwards`;
+
+        setTimeout(() => piece.remove(), fallTime * 1000);
+      }
+
+      /* ---------------------- COUNTDOWN ---------------------- */
+
+      const targetDate = new Date(2026, 0, 30, 9, 30, 0).getTime();
       const units = ["days", "hours", "minutes", "seconds"];
 
+      let countdownFinished =
+        localStorage.getItem("munCountdownFinished") === "yes";
+
+      function setAllToZero() {
+        units.forEach((u) => {
+          const el = document.getElementById(u);
+          if (el) el.textContent = "00";
+        });
+      }
+
       function updateCountdown() {
+        if (countdownFinished) {
+          setAllToZero();
+          return;
+        }
+
         const now = new Date().getTime();
         let diff = targetDate - now;
 
-        if (diff < 0) diff = 0;
+        if (diff <= 0) {
+          diff = 0;
+          countdownFinished = true;
+          localStorage.setItem("munCountdownFinished", "yes");
+          setAllToZero();
+          triggerCelebration();
+          clearInterval(countdownInterval);
+          return;
+        }
 
         const values = {
           days: Math.floor(diff / (1000 * 60 * 60 * 24)),
@@ -1319,17 +1462,23 @@
             const card = el.closest(".countdown-card");
             el.textContent = newVal;
             card.classList.remove("flip");
-            void card.offsetWidth; // force reflow
+            void card.offsetWidth;
             card.classList.add("flip");
           }
         });
       }
 
+      const countdownInterval = setInterval(updateCountdown, 1000);
       updateCountdown();
-      setInterval(updateCountdown, 1000);
 
-      // ===== STARS + COMETS BACKGROUND =====
-      const hero = document.getElementById("hero");
+      // If countdown already finished earlier, auto-trigger classy celebration on each load
+      if (countdownFinished) {
+        setTimeout(() => {
+          triggerCelebration();
+        }, 800);
+      }
+
+      /* ---------------------- STARS / COMETS / SPARKLES ---------------------- */
 
       function createStar() {
         const star = document.createElement("div");
@@ -1372,7 +1521,6 @@
         }, 8000);
       }
 
-      // initial batch
       for (let i = 0; i < 30; i++) {
         setTimeout(createStar, i * 200);
       }
@@ -1380,7 +1528,6 @@
       setInterval(createStar, 900);
       setInterval(createComet, 5000 + Math.random() * 3000);
 
-      // ===== CURSOR SPARKLES =====
       let lastSparkleTime = 0;
       document.addEventListener("mousemove", (e) => {
         const now = performance.now();
