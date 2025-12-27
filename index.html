@@ -25,7 +25,7 @@
         padding: 15px 40px;
         color: white;
         position: sticky;
-        top: 0; 
+        top: 0;
         z-index: 1000;
       }
 
@@ -229,6 +229,167 @@
           margin: 8px;
           font-size: 14px;
         }
+      }
+
+      /* =========================================================
+   AESTHETIC ENHANCEMENT LAYER — NON-DESTRUCTIVE
+   ========================================================= */
+
+      /* Global soft glow + smoother rendering */
+      body {
+        background-attachment: fixed;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Subtle page fade-in */
+      body {
+        animation: pageIn 1.2s ease forwards;
+        opacity: 0;
+      }
+      @keyframes pageIn {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Navbar glow + glass */
+      .navbar {
+        backdrop-filter: blur(12px);
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7),
+          0 0 20px rgba(255, 204, 0, 0.12);
+      }
+
+      /* Navbar link underline glow */
+      .navbar .links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 0%;
+        height: 2px;
+        background: linear-gradient(90deg, #ffcc00, #ffe680);
+        box-shadow: 0 0 12px rgba(255, 204, 0, 0.8);
+        transition: width 0.35s ease;
+      }
+      .navbar .links a:hover::after {
+        width: 100%;
+      }
+
+      /* Scrolling bar glow */
+      .scroll-bar {
+        box-shadow: inset 0 0 25px rgba(255, 204, 0, 0.15);
+      }
+
+      /* Hero cinematic depth */
+      .hero {
+        position: relative;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at center,
+          rgba(255, 204, 0, 0.15),
+          transparent 60%
+        );
+        pointer-events: none;
+      }
+
+      /* Hero title shimmer */
+      .hero h1 {
+        background: linear-gradient(120deg, #fff3b0, #ffcc00, #fff3b0);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: shimmer 6s linear infinite;
+      }
+      @keyframes shimmer {
+        from {
+          background-position: 200% 0;
+        }
+        to {
+          background-position: -200% 0;
+        }
+      }
+
+      /* Section title glow */
+      section h2 {
+        position: relative;
+      }
+      section h2::after {
+        content: "";
+        display: block;
+        margin: 14px auto 0;
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #ffcc00, transparent);
+        box-shadow: 0 0 14px rgba(255, 204, 0, 0.9);
+      }
+
+      /* Cards — glass + glow + lift */
+      .card {
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 204, 0, 0.25);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7),
+          inset 0 0 20px rgba(255, 204, 0, 0.05);
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-14px) scale(1.03);
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85),
+          0 0 25px rgba(255, 204, 0, 0.6);
+      }
+
+      /* Card text glow */
+      .card h3 {
+        text-shadow: 0 0 12px rgba(255, 204, 0, 0.6);
+      }
+
+      /* Gallery images — cinematic hover */
+      .gallery-images img {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+      .gallery-images img:hover {
+        transform: scale(1.08);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8),
+          0 0 25px rgba(255, 204, 0, 0.6);
+      }
+
+      /* Section fade layering */
+      section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.25),
+          rgba(0, 0, 0, 0.65)
+        );
+        z-index: -1;
+      }
+
+      /* Footer glow */
+      footer {
+        box-shadow: inset 0 0 25px rgba(255, 204, 0, 0.12);
+      }
+
+      /* Footer link glow */
+      footer a:hover {
+        text-shadow: 0 0 14px rgba(255, 204, 0, 1);
+      }
+
+      /* Smooth hover everywhere */
+      * {
+        transition: color 0.35s ease, background 0.35s ease,
+          box-shadow 0.35s ease, transform 0.35s ease;
       }
     </style>
   </head>
